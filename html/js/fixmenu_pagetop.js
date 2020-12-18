@@ -42,7 +42,7 @@ fm_addEvent(window, 'load', function() {
     });
 });
 //mypage
-$(function() {
+window.addEventListener('DOMContentLoaded', function() {
     $(".fancy-button").mousedown(function() {
         $(this).bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function() {
             $(this).removeClass('active');
