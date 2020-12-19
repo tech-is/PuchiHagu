@@ -882,12 +882,45 @@ ol {
 ---------------------------------------------------------------------------*/
 
 .message-user {
-    font-family: 'Nunito', sans-serif;
+    font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     font-size: 160%;
     margin-left: 0%;
     margin-top: 0%;
     margin-bottom: 0%;
     padding: 0;
+}
+
+.contCaption {
+    font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    color: rgb(228, 26, 39);
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    position: relative;
+    line-height: 1;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.contSubCaption {
+    color: #F28888;
+    font-size: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: normal;
+    letter-spacing: .2em;
+}
+
+.mypage-read {
+    background-color: #F7F6F0;
+    padding: 0 20px;
+    line-height: 50px;
+    margin-bottom: 31px;
+    color: #999;
+    font-size: 25px;
+    font-weight: normal;
+    font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
 .tab-wrap {
@@ -901,13 +934,13 @@ ol {
     content: '';
     width: 100%;
     height: 3px;
-    background: #FFA500;
+    background: #ffbbbb;
     display: block;
     order: -1;
 }
 
 .tab-label {
-    font-family: 'Nunito', sans-serif;
+    font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     color: White;
     background: LightGray;
     font-weight: bold;
@@ -932,11 +965,11 @@ ol {
     height: 0;
     overflow: hidden;
     opacity: 0;
-    font-family: 'Nunito', sans-serif;
+    font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
 .tab-switch:checked+.tab-label {
-    background: #FFA500;
+    background: #ffbbbb;
 }
 
 .tab-switch:checked+.tab-label+.tab-content {
@@ -957,7 +990,7 @@ ol {
 /* mypage button ---------------------------------------------------------------------------*/
 
 .button {
-    background: #eb1f48;
+    background: rgb(228, 26, 39);
     border-radius: 5px;
     color: white;
     cursor: pointer;
@@ -969,18 +1002,23 @@ ol {
     text-transform: uppercase;
     text-align: center;
     user-select: none;
-    width: 150px;
-    margin-left: 530px;
-    margin-top: 30px;
+    width: 250px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 480px;
 }
 
+.button p {
+    display: inline-block;
+    width: 250px;
+}
 
 .button:hover {
-    background: #ec3257;
+    background: rgb(228, 26, 39);
 }
 
 .button:active {
-    box-shadow: inset 0px 2px 8px -1px #d7143b;
+    box-shadow: inset 0px 2px 8px -1px rgb(228, 26, 39);
 }
 
 .fancy-button {
@@ -992,7 +1030,7 @@ ol {
 .frills:after,
 .frills:before {
     position: absolute;
-    background: #eb1f48;
+    background: rgb(228, 26, 39);
     border-radius: 4px;
     height: 8px;
 }
@@ -1014,7 +1052,7 @@ ol {
 .left-frills {
     right: 164px;
     top: 28.5px;
-    margin-right: 500px;
+    margin-right: 540px;
 }
 
 .active .left-frills {
@@ -1037,7 +1075,7 @@ ol {
 .right-frills {
     left: 164px;
     top: 28.5px;
-    margin-left: 520px;
+    margin-left: 570px;
 }
 
 .active .right-frills {
@@ -1111,73 +1149,250 @@ ol {
         top: 69.75px;
     }
 }
+
+
+/* 登録情報変更コンテンツ　ボタン */
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /*rem算出をしやすくするために*/
+}
+
+.btn,
+a.btn,
+button.btn {
+    font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+    color: #fff;
+    background-color: #ffbbbb;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+    color: #fff;
+    background: #ffbbbb;
+}
+
+
+/* コンテンツ　リンク　ボタン */
+
+.btn-circle-stitch-blue {
+    font-size: 3.6rem;
+    display: inline-block;
+    text-decoration: none;
+    background: #87befd;
+    color: #FFF;
+    width: 200px;
+    height: 200px;
+    line-height: 180px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #87befd;
+    border: dashed 5px #FFF;
+    transition: .10s;
+    margin-right: 34px;
+}
+
+.btn-circle-stitch-blue:hover {
+    background: #668ad8;
+    box-shadow: 0px 0px 0px 5px #668ad8;
+}
+
+.btn-circle-stitch-green {
+    font-size: 3.6rem;
+    display: inline-block;
+    text-decoration: none;
+    background: #a3fd87ef;
+    color: #FFF;
+    width: 200px;
+    height: 200px;
+    line-height: 180px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #a3fd87ef;
+    border: dashed 5px #FFF;
+    transition: .10s;
+    margin-right: 34px;
+}
+
+.btn-circle-stitch-green:hover {
+    background: #279705d3;
+    box-shadow: 0px 0px 0px 5px #279705d3;
+}
+
+.btn-circle-stitch-yellow {
+    font-size: 3.6rem;
+    display: inline-block;
+    text-decoration: none;
+    background: #faf767;
+    color: #FFF;
+    width: 200px;
+    height: 200px;
+    line-height: 180px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #faf767;
+    border: dashed 5px #FFF;
+    transition: .10s;
+    margin-right: 34px;
+}
+
+.btn-circle-stitch-yellow:hover {
+    background: #f1ee0f;
+    box-shadow: 0px 0px 0px 5px #f1ee0f;
+}
+
+.btn-circle-stitch-orange {
+    font-size: 3.6rem;
+    display: inline-block;
+    text-decoration: none;
+    background: #facb67;
+    color: #FFF;
+    width: 200px;
+    height: 200px;
+    line-height: 180px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #facb67;
+    border: dashed 5px #FFF;
+    transition: .10s;
+    margin-right: 34px;
+}
+
+.btn-circle-stitch-orange:hover {
+    background: #f8ab04;
+    box-shadow: 0px 0px 0px 5px#f8ab04;
+}
+
+.btn-circle-stitch-red {
+    font-size: 2.6rem;
+    display: inline-block;
+    text-decoration: none;
+    background: #fa8967;
+    color: #FFF;
+    width: 200px;
+    height: 200px;
+    line-height: 180px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px #fa8967;
+    border: dashed 5px #FFF;
+    transition: .10s;
+    margin-right: 34px;
+}
+
+.btn-circle-stitch-red:hover {
+    background: #f15a2c;
+    box-shadow: 0px 0px 0px 5px#f15a2c;
+}
+
+
 /*ログインフォーム
 ---------------------------------------------------------------------------*/
-.form{
-	width: 100%;
-	margin:0 auto;
-	border: 1px solid #9c9c9c;
-	padding: 50px;
-	box-sizing: border-box;
-  }
-  
-  .item{
-	margin-bottom: 20px;
-  }
-  
-  .label_left{
-	display: inline-block;
-	width:25%;
-	border-left: solid 5px #5250e0;
-	padding-left: 15px;
-	vertical-align:top;
-  }
-  
- .form input[type="text"], 
- .form input[type="number"],
- .form input[type="email"] ,
- .form input[type="password"] {
-	  padding: 10px;
-	  width: 65%;
-  }
-  
- .form textarea{
-	padding: 10px;
-	height: 100px;
-	font-size: 14px;
-	width: 65%;
-  }
-  
- .form select{
-	height: 35px;
-	width: 65%;
-  }
-  
-  .btns{
-	display: flex;
-	justify-content: center;
-  }
-  
- .form input[type="submit"]{
-	background: #5250e0;
-	color: white;
-	font-size:16px;
-	font-weight:bold;
-	padding: 10px 20px;
-	margin: 0 5px;
-  }
-  
- .form input[type="reset"]{
-	background: #333;
-	color: white;
-	font-size:16px;
-	font-weight:bold;
-	padding: 10px 20px;
-	margin: 0 5px;
-  }
+
+.form {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #9c9c9c;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.item {
+    margin-bottom: 20px;
+}
+
+.label_left {
+    display: inline-block;
+    width: 25%;
+    border-left: solid 5px #5250e0;
+    padding-left: 15px;
+    vertical-align: top;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="email"],
+.form input[type="password"] {
+    padding: 10px;
+    width: 65%;
+}
+
+.form textarea {
+    padding: 10px;
+    height: 100px;
+    font-size: 14px;
+    width: 65%;
+}
+
+.form select {
+    height: 35px;
+    width: 65%;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+}
+
+.form input[type="submit"] {
+    background: #5250e0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 5px;
+}
+
+.form input[type="reset"] {
+    background: #333;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 5px;
+}
+
 
 /*コンテンツのセンタリング
 ---------------------------------------------------------------------------*/
+
 .box {
     text-align: center;
 }
