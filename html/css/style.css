@@ -883,7 +883,7 @@ ol {
 
 .message-user {
     font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-    font-size: 160%;
+    font-size: 125%;
     margin-left: 0%;
     margin-top: 0%;
     margin-bottom: 0%;
@@ -1332,6 +1332,77 @@ a.btn--orange:hover {
     color: #FFF;
     background: #f55625;
     box-shadow: 0px 0px 0px 5px#f55625;
+}
+
+
+/* kaiinjouhouhenkou 
+---------------------------------------------------------------------------*/
+
+.message-user-henkou {
+    font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 125%;
+    margin-left: 0%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding: 0;
+    text-align: center;
+}
+
+.sectionInner {
+    background: #f0f0f0;
+    padding: 36px 48px 40px 48px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+}
+
+.sectionHeader {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.tourokujouhou {
+    font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 165%;
+    text-align: center;
+}
+
+.kaiinhenkou-submit {
+    display: inline-block;
+    max-width: 150px;
+    text-align: center;
+    border: 2px solid#EA1323;
+    font-size: 16px;
+    color: #EA1323;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px 25px;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.kaiinhenkou-submit:hover {
+    background-color: #EA1323;
+    border-color: #e74752;
+    color: #FFF;
+}
+
+.reset-submit {
+    display: inline-block;
+    max-width: 150px;
+    text-align: center;
+    border: 2px solid#4b4a4a;
+    font-size: 16px;
+    color: #4b4a4a;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px 19px;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.reset-submit:hover {
+    background-color: #4b4a4a;
+    border-color: #726f6f;
+    color: #FFF;
 }
 
 
