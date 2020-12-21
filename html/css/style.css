@@ -1406,6 +1406,17 @@ a.btn--orange:hover {
 }
 
 
+/* kaiinjouhouhenkoukakunin
+---------------------------------------------------------------------------*/
+
+.sectionInner2 {
+    background: #fff;
+    padding: 36px 48px 40px 48px;
+    border: 1px solid#fff;
+    border-radius: 4px;
+}
+
+
 /*ログインフォーム
 ---------------------------------------------------------------------------*/
 
