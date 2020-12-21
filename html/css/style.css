@@ -1151,7 +1151,7 @@ ol {
 }
 
 
-/* 登録情報変更コンテンツ　ボタン */
+/*会員登録情報コンテンツ　ボタン */
 
 *,
 *:before,
@@ -1209,8 +1209,8 @@ a.btn--orange {
 }
 .btn--orange:hover,
 a.btn--orange:hover {
-    color: rgb(250, 187, 219);
-    background: #ffbbbb;
+    color: rgba(248, 20, 134, 0.637);
+    background: #ffffff;
 }
 
 /* コンテンツ　リンク　ボタン */
