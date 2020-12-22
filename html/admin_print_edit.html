@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コンテンツ編集</title>
+    <link rel="stylesheet" href="css/adminlogin.css">
+</head>
+
+<body>
+
+    <h1>
+        コンテンツ編集ページ
+    </h1>
+    <a href="admin_print_edit.html">プリントを追加する</a>
+    <hr>
+    <table border="1" width="100%">
+        <tr>
+            <th></th>
+            <th>分類</th>
+            <th>プリントタイトル</th>
+            <th>プリントの説明文</th>
+            <th>更新日時</th>
+            <th>作成日時</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><a href="">編集</a></td>
+            <td><select name="category">
+                <option value="1">ひらがな</option>
+                <option value="2">すうじ</option>
+                <option value="3">うんぴつ</option>
+                <option value="4">てんつなぎ</option>
+                <option value="5">プログラミング</option>
+            </select></td>
+            <td>記事タイトル（ダミー）</td>
+            <td>記事本文（ダミー）</td>
+            <td>2000-01-01 00:00:00</td>
+            <td>2000-01-01 00:00:00</td>
+            <td><a href="post_edit.php?mode=delete">削除</a></td>
+
+        </tr>
+    </table>
+
+    <hr>
+    <a href=" ./adminindex.html ">トップページへ戻る</a>
+    <a href="./ ">ぷちはぐへ戻る</a>
+</body>
+
+</html>
