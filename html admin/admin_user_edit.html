@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用者追加編集ページ</title>
+    <link rel="stylesheet" href="css/adminlogin.css">
+</head>
+
+<body>
+
+
+
+
+    <h1>
+        利用者追加編集ページ
+    </h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div>
+            保護者名前 <span class="attention">[必須]</span><br>
+            <input type="text" name="user_name" size="30" value="">
+        </div>
+        <div>
+            お子さんの名前　１人目 <span class="attention">[必須]</span><br>
+            <input type="text" name="user_children_name" size="30" value="">
+        </div>
+        <div>
+            お子さんの名前　２人目 <span class="attention"></span><br>
+            <input type="text" name="user_children2_name" size="30" value="">
+        </div>
+        <div>
+            メールアドレス <span class="attention">[必須]</span><br>
+            <input type="text" name="mail" size="30" value="">
+        </div>
+        <div>
+            パスワード<span class="attention">[必須]</span><br>
+            <input type="password" name="password" size="30" value="">
+        </div>
+
+        <div>
+            <input type="submit" name="send" value="送信する">
+        </div>
+
+
+    </form>
+    <hr>
+    <a href=" ./admin_index.html ">トップページへ戻る</a>
+    <a href="./ ">ぷちはぐへ戻る</a>
+</body>
+
+</html>
