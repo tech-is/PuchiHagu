@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コンテンツ追加編集ページ</title>
+    <link rel="stylesheet" href="css/adminlogin.css">
+</head>
+
+<body>
+
+
+
+    <h1>
+        コンテンツ追加編集ページ
+    </h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div>
+            分類 <span class="attention">[必須]</span><br>
+            <select name="category">
+                <option value="1">ひらがな</option>
+                <option value="2">すうじ</option>
+                <option value="3">うんぴつ</option>
+                <option value="4">てんつなぎ</option>
+                <option value="5">プログラミング</option>
+            </select>
+        </div>
+        <div>
+            プリントのタイトル <span class="attention">[必須]</span><br>
+            <input type="text" name="post_title" size="30" value="">
+        </div>
+
+        <div>
+            プリントの説明文<br>
+            <textarea name="post_content" rows="5" cols="20"></textarea>
+        </div>
+        <div>
+            画像ファイル <span class="attention">[必須]</span><br>
+            <input type="file" 　name="pic">
+        </div>
+        <div>
+            <input type="submit" name="send" value="送信する">
+        </div>
+
+
+    </form>
+    <hr>
+    <a href=" ./adminindex.html ">トップページへ戻る</a>
+    <a href="./ ">ぷちはぐへ戻る</a>
+</body>
+
+</html>
