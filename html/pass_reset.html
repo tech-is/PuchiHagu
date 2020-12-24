@@ -39,11 +39,11 @@
 <!-- ログインorパスワードを忘れた方or新規登録 -->
 <div id="contents">
   <section class="box1">
-  <h2><span>会員登録</span></h2>
+  <h2><span>登録メールアドレスの確認</span></h2>
   </section>
 </div>
 <div>
-  <p style="text-align: center;">会員登録がおすみの方は<a href="login.html">こちら</a>から</p>
+  <p style="text-align: center;">ログインは<a href="login.html">こちら</a>から</p>
 </div>
 <!--/#contents-->
 <form action="" method="post">
@@ -56,23 +56,14 @@
           <div class="usernameWrapper">
             <label for="username"><strong>メールアドレス</strong></label>
             <input type="text" name="username" id="username" style="border-width:0 0 1px 0;border-style: dotted">
-
+          </div>
+          <p style="text-align: center;">ご登録いただいたメールアドレス宛にパスワードの再設定フォームを送信します</p>
+          
           <!-- バリデーション -->
-          <div class="passwordWrapper">
-            <label for="pass"><strong>ぱすわーど　　　</strong></label>
-            <input type="text" name="password" id="pass" style="border-width:0 0 1px 0;border-style: dotted">
+          <div class="btnWrapper">
+            <input type="submit" name="btn_submit"  value="送信" style="float:right; background-color:#ffbbbb; color:whitesmoke;border-radius: 45%;border: none;"> 
           </div>
-          <div class="passwordWrapper">
-            <label for="pass"><strong>ぱすわーどの確認</strong></label>
-            <input type="text" name="password" id="pass" style="border-width:0 0 1px 0;border-style: dotted">
-          </div>
-        </div>
-        <p style="text-align: center;"><a href="membership.html">会員規約</a></p>
-        <!-- バリデーション -->
-        <!-- メール送信の機能追加 -->
-        <div class="btnWrapper">
-          <input type="submit" name="btn_submit"  value="規約に同意して登録" style="float:right; background-color:#ffbbbb; color:whitesmoke;border-radius: 45%;border: none;"> 
-        </div>
+
       </div>
     </section>
     
