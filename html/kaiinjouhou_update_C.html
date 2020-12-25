@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="無料で利用できる幼児(3歳～6歳)向けの教育、プリントサービスです">
     <meta name="keywords" content="幼児教育,知育,無料プリント,子供プリント,ひらがな,印刷">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/slide.css">
     <script src="js/fixmenu_pagetop.js"></script>
@@ -53,59 +54,61 @@
                         <p>会員情報の変更を行います。<br> 各項目の入力・変更が完了いたしましたら、「確認する」ボタンを押してください。
                         </p>
                     </div>
-                    <div class="sectionInner">
-                        <div class="sectionHeader">
-                            <h2>基本情報</h2>
-                            <!-- /.sectionHeader -->
+                    <div class="sectionHeader">
+                        <h2>基本情報</h2>
+                        <!-- /.sectionHeader -->
+                    </div>
+                    <form action="" method="post">
+                        <div class="form-group row">
+                            <label for="username" class="col-sm-2 col-form-label">ユーザー名<br>(保護者の名前)</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="username" class="form-control" placeholder="現在の名前を表示させる" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="childname1" class="col-sm-2 col-form-label">お子さま 1人目の名前</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="childname1" class="form-control" placeholder="お子さんの名前を表示させる" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="childname2" class="col-sm-2 col-form-label">お子さま 2人目の名前</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="childname2" class="form-control" placeholder="お子さんの名前を表示させる" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-2 col-form-label">メールアドレス</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" placeholder="メールアドレスを表示させる" disabled>
+                            </div>
                         </div>
 
 
-                        <form action="#" method="post">
-                            <div class="tourokujouhou">
-                                <!--   親の名前 -->
-                                <label for="name">保護者の名前</label>
-                                <input id="name" type="text" placeholder="名前を入力" disabled><br>
-
-                                <!--   親の名前フリガナ-->
-                                <label for="name">フリガナ</label>
-                                <input id="name" type="text" placeholder="名前を入力" disabled><br>
-
-                                <!--   子供の名前➀ -->
-                                <label for="childname1">お子さま 1人目の名前</label>
-                                <input id="age" type="text" placeholder="お子さんの名前を入力" disabled><br>
-
-                                <!--   子供の名前➁ -->
-                                <label for="childname2">お子さま 2人目の名前</label>
-                                <input id="age" type="text" placeholder="お子さんの名前を入力" disabled><br>
-
-                                <!--   メールアドレス -->
-                                <label for="email">メールアドレス</label>
-                                <input id="email" type="email" placeholder="メールアドレスを入力" disabled><br>
 
 
 
-                                <div class="container">
-                                    <a href="kaiinjouhou_update_F.html" class="add-submit" id="">変更する</a><br>
-                                </div>
-                                <div class="container">
-                                    <a href="mypage.html" class="reset-submit" id="">キャンセル</a><br>
-                                </div>
-
-                            </div>
-                    </div>
+                        <div class="container">
+                            <a href="kaiinjouhou_update_F.html" class="add-submit" id="">変更する</a><br>
+                        </div>
+                        <div class="container">
+                            <a href="mypage.html" class="reset-submit" id="">キャンセル</a><br>
+                        </div>
                     </form>
 
+
+
                 </section>
-
-
-
             </div>
-            <!--/#contents-->
 
-            <footer>
-                <small>Copyright&copy; <a href="index.html">幼児無料プリントサイト　ぷちはぐ</a> All Rights Reserved.</small>
-                <span class="pr">《<a href="https://template-party.com/" target="_blank">Web Design:Template-Party</a>》</span>
-            </footer>
+
+
+        </div>
+
+        <footer>
+            <small>Copyright&copy; <a href="index.html">幼児無料プリントサイト　ぷちはぐ</a> All Rights Reserved.</small>
+            <span class="pr">《<a href="https://template-party.com/" target="_blank">Web Design:Template-Party</a>》</span>
+        </footer>
 
         </div>
         <!--/#container-->

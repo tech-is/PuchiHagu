@@ -1423,11 +1423,6 @@ a.btn--orange:hover {
     text-align: center;
 }
 
-input[type=password]:focus {
-    color: #003a6c;
-    background-color: #ffe7d9;
-}
-
 .box1 {
     font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
@@ -1437,6 +1432,10 @@ input[type=password]:focus {
 }
 
 .form-control {
+    font-size: 20px;
+}
+
+.form-control-plaintext {
     font-size: 20px;
 }
 
