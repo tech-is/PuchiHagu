@@ -1427,7 +1427,7 @@ a.btn--orange:hover {
     font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
-.form-group {
+.form-group row {
     font-size: 20px;
 }
 
