@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>コンテンツ管理画面</title>
+
+    <!-- for responsive -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- font awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- ionicons -->
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- adminLTE style -->
+    <link href="dist/css/adminlte.min.css" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+</head>
+
+
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- トップメニュー -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- ロゴ -->
+            <a href="starter.html" class="brand-link">
+                <img src="dist\img\logo1.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">管理画面</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+                        <li class="nav-item menu-open">
+                            < <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    機能一覧
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="admin_contents.html" class="nav-link active">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>コンテンツ管理 </p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="admin_user.html" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>利用者管理</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>DM管理</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Simple Link
+                                    <span class="right badge badge-danger">New</span>
+                                </p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>利用者一覧</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">ホーム</a></li>
+                                <li class="breadcrumb-item active">利用者一覧</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title"><a href="admin_print_add.html">新規登録</a></h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>保護者名前</th>
+                                                <th>お子さんの名前➀</th>
+                                                <th>お子さんの名前➁</th>
+                                                <th>メールアドレス</th>
+                                                <th>登録日時</th>
+                                                <th>パスワード</th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>テスト１</td>
+                                                <td>ひな</td>
+                                                <td>あらた</td>
+                                                <td>hinaarata@gmail.com</td>
+                                                <td>2020-01-01 00:00:00</td>
+                                                <th>1234567</th>
+                                                <td>
+                                                    <a class="btn btn-outline-primary btn-sm" href="admin_print_edit.html">編集</a>
+                                                    <a class="btn btn btn-outline-danger btn-sm" href="admin_print_delete.html">削除</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>テスト２</td>
+                                                <td>ゆいな</td>
+                                                <td>けんた</td>
+                                                <td>yuinakenta@gmail.com</td>
+                                                <td>2020-01-01 00:00:00</td>
+                                                <th>1234567</th>
+                                                <td>
+                                                    <a class="btn btn-outline-primary btn-sm" href="admin_print_edit.html">編集</a>
+                                                    <a class="btn btn btn-outline-danger btn-sm" href="admin_print_delete.html">削除</a>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>テスト３</td>
+                                                <td>ゆうき</td>
+                                                <td>---</td>
+                                                <td>yuukimako@gmail.com</td>
+                                                <td>2020-01-01 00:00:00</td>
+                                                <th>1234567</th>
+                                                <td>
+                                                    <a class="btn btn-outline-primary btn-sm" href="admin_print_edit.html">編集</a>
+                                                    <a class="btn btn btn-outline-danger btn-sm" href="admin_print_edit.html">削除</a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>テスト４</td>
+                                                <td>みいひ</td>
+                                                <td>まゆか</td>
+                                                <td>miihimayuka@gmail.com</td>
+                                                <td>2020-01-01 00:00:00</td>
+                                                <th>1234567</th>
+                                                <td>
+                                                    <a class="btn btn-outline-primary btn-sm" href="admin_print_edit.html">編集</a>
+                                                    <a class="btn btn btn-outline-danger btn-sm" href="admin_print_delete.html">削除</a>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>テスト５</td>
+                                                <td>りく</td>
+                                                <td>---</td>
+                                                <td>riku@gmail.com</td>
+                                                <td>2020-01-01 00:00:00</td>
+                                                <th>1234567</th>
+                                                <td>
+                                                    <a class="btn btn-outline-primary btn-sm" href="admin_print_edit.html">編集</a>
+                                                    <a class="btn btn btn-outline-danger btn-sm" href="admin_print_delete.html">削除</a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>テスト６</td>
+                                                <td>あやか</td>
+                                                <td>ゆうたろう</td>
+                                                <td>ayakayuu@gmail.com</td>
+                                                <td>2020-01-01 00:00:00</td>
+                                                <th>1234567</th>
+                                                <td>
+                                                    <a class="btn btn-outline-primary btn-sm" href="admin_print_edit.html">編集</a>
+                                                    <a class="btn btn btn-outline-danger btn-sm" href="admin_print_delete.html">削除</a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>保護者名前</th>
+                                                <th>お子さんの名前➀</th>
+                                                <th>お子さんの名前➁</th>
+                                                <th>メールアドレス</th>
+                                                <th>登録日時</th>
+                                                <th>パスワード</th>
+                                                <th></th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+                <b>Version</b> 3.1.0-rc
+            </div>
+            <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="plugins/jszip/jszip.min.js"></script>
+    <script src="plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                "language": {
+                    url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+                },
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+</body>
+
+</html> });
+</script>
+</body>
+
+</html>
