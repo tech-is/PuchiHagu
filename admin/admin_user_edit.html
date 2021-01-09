@@ -58,7 +58,62 @@
         .custom-file-label {
             white-space: nowrap;
         }
+        
+        .btn {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
     </style>
+    <script>
+        //フォーム追加js　不使用
+        function addForm(obj) {
+            var idx = obj.selectedIndex;
+            var value = obj.options[idx].value;
+            console.log(value);
+            if (value == "add") {
+                //createElement() でinputを生成
+                var input_data = document.createElement("input");
+                input_data.type = "text";
+                input_data.id = "inputform";
+                input_data.class = "form-control";
+                input_data.setAttribute("size", "30");
+                input_data.placeholder = "名前を入力してください";
+                var parent = document.getElementById("input_form");
+                parent.appendChild(input_data);
+            } else if (value == "none") {
+
+            } else {
+                exit;
+            }
+        }
+        //フォーム追加js　使用中
+
+        var deleteButton = document.getElementById('delete-button');
+
+
+        function func1() {
+            var add_button = document.getElementById("secondchildren");
+            var add_button_value = document.getElementById("secondchildren").value;
+            if (add_button_value == "追加") {
+                var input_data = document.createElement("input");
+                input_data.type = "text";
+                input_data.id = "inputform";
+                input_data.setAttribute("class", "form-control");
+                input_data.placeholder = "お子さんの名前➁を入力してください";
+                var parent = document.getElementById("input_form");
+                parent.appendChild(input_data);
+                // add_button.disabled = true;
+                add_button.setAttribute('class', 'btn btn-secondary');
+                add_button.setAttribute("value", "キャンセル");
+            }
+
+
+        }
+        //フォーム登録なしに変更js
+        function func2() {
+
+        }
+    </script>
 
 </head>
 
@@ -134,12 +189,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>コンテンツ編集</h1>
+                            <h1>登録ユーザー編集</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                                <li class="breadcrumb-item active">コンテンツ編集</li>
+                                <li class="breadcrumb-item active">登録ユーザー編集</li>
                             </ol>
                         </div>
                     </div>
@@ -169,90 +224,102 @@
                         <div class="card-body">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>分類</label><span class=" badge badge-danger ">必須</span>
-                                    <select class="form-control select2bs4" style="width: 100%;">
-                                                    <option selected="selected"></option>
-                                                    <option>ひらがな</option>
-                                                    <option>すうじ</option>
-                                                    <option>うんぴつ</option>
-                                                    <option>てんつなぎ</option>
-                                                    <option>プログラミング</option>
-                                            </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>タイトル</label><span class=" badge badge-danger ">必須</span>
+                                    <label>ユーザー名</label><span class=" badge badge-danger ">必須</span>
                                     <div class="col-xs-2">
-                                        <input type=" text " id="username " class="form-control " placeholder="現在のタイトルを表示させる ">
+                                        <input type=" text " id="username " class="form-control " placeholder="現在のユーザー名を表示させる ">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>説明文</label>
+                                    <label>お子さんの名前➀</label><span class=" badge badge-danger ">必須</span>
                                     <div class="col-xs-2">
-                                        <input type=" text " id="username " class="form-control " placeholder="現在の説明文を表示させる ">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>画像ファイル名</label><span class=" badge badge-danger ">必須</span>
-                                    <div class="col-xs-2">
-                                        <input type=" text " id="username " class="form-control " placeholder="現在のファイル名を表示させる ">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>更新日時</label><span class=" badge badge-danger ">必須</span>
-                                    <div class="col-xs-2">
-                                        <input type=" text " id="username " class="form-control " placeholder="現在の登録情報を表示させる ">
+                                        <input type=" text " id="username " class="form-control " placeholder="現在の名前を表示させる ">
                                     </div>
                                 </div>
 
-
-                                <!-- テスト -->
+                                ----------------------------------------------------------------------
+                                <p>名前➁の登録ありの場合</p>
                                 <div class="form-group">
-                                    <label for="file">ファイル（複数選択可）</label>
-                                    <div id="file" class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" id="cutomfile" class="custom-file-input" name="cutomfile[]" multiple />
-                                            <label class="custom-file-label" for="customfile" data-browse="参照">ファイル選択...</label>
-                                        </div>
-                                        <div class="input-group-append">
-                                            <button type="button" class="btn btn-outline-secondary reset">取消</button>
-                                        </div>
+                                    <label>お子さんの名前➁</label>
+                                    <div class="col-xs-2"></div>
+                                    <div class="col-xs-2">
+                                        <input type=" text " id="username " class="form-control " placeholder="現在の名前を表示させる ">
                                     </div>
+
+                                    <input id="deletechildren" class="btn btn-secondary" type="submit" value="登録なしへ変更" onclick="func2()">
+
+
+                                </div>
+                                ----------------------------------------------------------------------
+                                <p>名前➁の登録無しの場合</p>
+                                <div class="form-group">
+
+
+                                    <input id="secondchildren" class="btn btn-success" type="submit" value="追加" onclick="func1()">
+                                    <div class="form-group" id="input_form">
+                                        <!-- jsでinputタグ追加する -->
+                                    </div>
+
                                 </div>
 
+                                <!-- 
+                                    <select class="form-control select2bs4" onchange="addForm(this)" style="width: 100%;">
+                                        <option selected="selected" value=""></option>
+                                        <option id="secondchildren" value='add'>追加</option>
+                                        <option value='none'>登録無し</option>
+                                    </select> -->
                             </div>
+
+
+
+
+                            <div class="form-group">
+                                <label>メールアドレス</label><span class=" badge badge-danger ">必須</span>
+                                <div class="col-xs-2">
+                                    <input type=" text " id="username " class="form-control " placeholder="現在のアドレスを表示させる ">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>パスワード</label><span class=" badge badge-danger ">必須</span>
+                                <div class="col-xs-2">
+                                    <input type=" text " id="username " class="form-control " placeholder="現在のパスワードを表示させる ">
+                                </div>
+                            </div>
+
 
                         </div>
 
                     </div>
 
-
                 </div>
-                <!-- /.container-fluid -->
-                <div class="card-footer">
-                    <form action="" method="post">
-                        <p>
-                            <input class="btn btn-primary" type="submit" value="更新">
-                            <input class="btn btn-secondary" type="reset" value="キャンセル">
-                        </p>
 
-                </div>
-            </section>
-            <!-- /.content -->
+
         </div>
-        <!-- /.content-wrapper -->
+        <!-- /.container-fluid -->
+        <div class="card-footer">
+            <form action="" method="post">
+                <p>
+                    <input class="btn btn-primary" type="submit" value="更新">
+                    <input class="btn btn-secondary" type="reset" value="キャンセル">
+                </p>
 
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.1.0-rc
-            </div>
-            <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-        </footer>
+        </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-block">
+            <b>Version</b> 3.1.0-rc
+        </div>
+        <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 
@@ -262,83 +329,6 @@
 <script src="plugins/jquery/jquery.min.js "></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js "></script>
-
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js "></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js "></script>
-
-<!-- Select2 -->
-<script src="plugins/select2/js/select2.full.min.js"></script>
-<!-- Bootstrap4 Duallistbox -->
-<script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
-<!-- InputMask -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/inputmask/jquery.inputmask.min.js"></script>
-<!-- date-range-picker -->
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- bootstrap color picker -->
-<script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Bootstrap Switch -->
-<script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
-<!-- BS-Stepper -->
-<script src="plugins/bs-stepper/js/bs-stepper.min.js"></script>
-<!-- dropzonejs -->
-<script src="plugins/dropzone/min/dropzone.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<!-- Page specific script -->
-<script>
-    $(function() {
-                //Initialize Select2 Elements
-                $('.select2').select2()
-
-                //Initialize Select2 Elements
-                $('.select2bs4').select2({
-                    theme: 'bootstrap4'
-                })
-</script>
-<script>
-    $('.custom-file-input').on('change', handleFileSelect);
-
-    function handleFileSelect(evt) {
-        $('#preview').remove(); // 繰り返し実行時の処理
-        $(this).parents('.input-group').after('<div id="preview"></div>');
-
-        var files = evt.target.files;
-
-        for (var i = 0, f; f = files[i]; i++) {
-
-            var reader = new FileReader();
-
-            reader.onload = (function(theFile) {
-                return function(e) {
-                    if (theFile.type.match('image.*')) {
-                        var $html = ['<div class="d-inline-block mr-1 mt-1"><img class="img-thumbnail" src="', e.target.result, '" title="', escape(theFile.name), '" style="height:100px;" /><div class="small text-muted text-center">', escape(theFile.name), '</div></div>'].join(''); // 画像では画像のプレビューとファイル名の表示
-                    } else {
-                        var $html = ['<div class="d-inline-block mr-1"><span class="small">', escape(theFile.name), '</span></div>'].join(''); //画像以外はファイル名のみの表示
-                    }
-
-                    $('#preview').append($html);
-                };
-            })(f);
-
-            reader.readAsDataURL(f);
-        }
-        $(this).next('.custom-file-label').html(+files.length + '個のファイルを選択しました');
-    }
-
-    //ファイルの取消
-    $('.reset').click(function() {
-        $(this).parent().prev().children('.custom-file-label').html('ファイル選択...');
-        $('#preview').remove();
-        $('.custom-file-input').val('');
-    })
-</script>
 
 
 
