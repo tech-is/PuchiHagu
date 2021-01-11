@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>登録ユーザー編集</title>
+    <title>登録ユーザー新規登録</title>
 
     <!-- for responsive -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -65,20 +65,6 @@
         }
     </style>
     <script>
-        //ボタンの切り替えjs
-        function button_click1() {
-            var user_edit_button1 = document.getElementById("user_edit_button1");
-            var user_edit_button1_value = document.getElementById("user_edit_button1").value;
-            if (user_edit_button1_value == "登録なしへ変更") {
-                user_edit_button1.setAttribute('class', 'btn btn-success');
-                user_edit_button1.setAttribute("value", "追加");
-            } else if (user_edit_button1_value == "追加") {
-                user_edit_button1.setAttribute('class', 'btn btn-secondary');
-                user_edit_button1.setAttribute("value", "登録なしへ変更");
-
-            }
-        }
-
         function button_click2() {
             var user_edit_button2 = document.getElementById("user_edit_button2");
             var user_edit_button2_value = document.getElementById("user_edit_button2").value;
@@ -93,21 +79,7 @@
         }
 
 
-        //名前➁の登録ありの場合のview フォーム表示　非表示切り替えjs
-        function myfunc(disp) {
-            var user_edit_button1_value = document.getElementById("user_edit_button1").value;
-            if (user_edit_button1_value == "追加") {
-                document.getElementById('child2name_display').style.display = disp;
-                document.getElementById('child2add').style.display = disp;
-                disp = 'inline';
-                document.getElementById('input_form1').style.display = disp;
-            } else if (user_edit_button1_value == "登録なしへ変更") {
-                document.getElementById('input_form1').style.display = disp;
-                document.getElementById('child2name_display').style.display = disp;
-                disp = 'inline';
-                document.getElementById('child2add').style.display = disp;
-            }
-        }
+
         //名前➀の登録無しの場合のview フォーム表示　非表示切り替えjs
         function myfunc2(disp2) {
             var user_edit_button2_value = document.getElementById("user_edit_button2").value;
@@ -200,12 +172,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>登録ユーザー編集</h1>
+                            <h1>ユーザー新規登録</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                                <li class="breadcrumb-item active">登録ユーザー編集</li>
+                                <li class="breadcrumb-item active">ユーザー新規登録</li>
                             </ol>
                         </div>
                     </div>
@@ -221,7 +193,7 @@
                     <!-- SELECT2 EXAMPLE -->
                     <div class="card card-default">
                         <div class="card-header">
-                            <h3 class="card-title">編集内容</h3>
+                            <h3 class="card-title">新規登録内容</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                         <i class="fas fa-minus"></i>
@@ -247,38 +219,7 @@
                                     </div>
                                 </div>
 
-                                ----------------------------------------------------------------------
-                                <p>名前➁の登録ありの場合のview</p>
-                                <div class="form-group" id="childname2_form">
-                                    <label>お子さんの名前➁</label><br>
-                                    <span id="input_form1">
-                                        <div class="form-group" id="input_form1">
-                                            登録無し
-                                        </div>
-                                    </span>
-                                    <div class="col-xs-2" id="child2">
-                                        <span id="child2name_display">
-                                        <input type=" text " id="child2name" class="form-control " placeholder="現在の名前を表示させる ">
-                                        </span>
-                                    </div>
 
-                                    <div class="col-xs-2" id="child2add">
-                                        <input type=" text " id="child2addname" class="form-control " placeholder="お子さんの名前➁を入力してください ">
-                                    </div>
-
-
-                                    <script>
-                                        //初期表示はinput_form1　child2add　非表示
-                                        document.getElementById("input_form1").style.display = "none";
-                                        document.getElementById("child2add").style.display = "none ";
-                                    </script>
-
-                                    <input id="user_edit_button1" class="btn btn-secondary" type="submit" value="登録なしへ変更" onclick="button_click1();myfunc('none')">
-
-
-                                </div>
-                                ----------------------------------------------------------------------
-                                <p>名前➁の登録無しの場合のview</p>
                                 <div class="form-group ">
                                     <label>お子さんの名前➁</label><br>
                                     <span id="input_form2">
@@ -327,8 +268,8 @@
                 <div class="card-footer ">
                     <form action=" " method="post ">
                         <p>
-                            <input class="btn btn-primary" type="submit" value="更新 ">
-                            <input class="btn btn-secondary" type="reset" value="キャンセル " onclick="location.href='admin_user.html'">
+                            <input class="btn btn-primary" type="submit" value="登録">
+                            <input class="btn btn-secondary" type="reset" value="キャンセル" onclick="location.href='admin_user.html'">
                         </p>
 
                 </div>
