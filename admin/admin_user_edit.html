@@ -65,53 +65,64 @@
         }
     </style>
     <script>
-        //フォーム追加js　不使用
-        function addForm(obj) {
-            var idx = obj.selectedIndex;
-            var value = obj.options[idx].value;
-            console.log(value);
-            if (value == "add") {
-                //createElement() でinputを生成
-                var input_data = document.createElement("input");
-                input_data.type = "text";
-                input_data.id = "inputform";
-                input_data.class = "form-control";
-                input_data.setAttribute("size", "30");
-                input_data.placeholder = "名前を入力してください";
-                var parent = document.getElementById("input_form");
-                parent.appendChild(input_data);
-            } else if (value == "none") {
+        //ボタンの切り替えjs
+        function button_click1() {
+            var user_edit_button1 = document.getElementById("user_edit_button1");
+            var user_edit_button1_value = document.getElementById("user_edit_button1").value;
+            if (user_edit_button1_value == "登録なしへ変更") {
+                user_edit_button1.setAttribute('class', 'btn btn-success');
+                user_edit_button1.setAttribute("value", "追加");
+            } else if (user_edit_button1_value == "追加") {
+                user_edit_button1.setAttribute('class', 'btn btn-secondary');
+                user_edit_button1.setAttribute("value", "登録なしへ変更");
 
-            } else {
-                exit;
             }
         }
-        //フォーム追加js　使用中
 
-        var deleteButton = document.getElementById('delete-button');
+        function button_click2() {
+            var user_edit_button2 = document.getElementById("user_edit_button2");
+            var user_edit_button2_value = document.getElementById("user_edit_button2").value;
+            if (user_edit_button2_value == "登録なしへ変更") {
+                user_edit_button2.setAttribute('class', 'btn btn-success');
+                user_edit_button2.setAttribute("value", "追加");
+            } else if (user_edit_button2_value == "追加") {
+                user_edit_button2.setAttribute('class', 'btn btn-secondary');
+                user_edit_button2.setAttribute("value", "登録なしへ変更");
 
-
-        function func1() {
-            var add_button = document.getElementById("secondchildren");
-            var add_button_value = document.getElementById("secondchildren").value;
-            if (add_button_value == "追加") {
-                var input_data = document.createElement("input");
-                input_data.type = "text";
-                input_data.id = "inputform";
-                input_data.setAttribute("class", "form-control");
-                input_data.placeholder = "お子さんの名前➁を入力してください";
-                var parent = document.getElementById("input_form");
-                parent.appendChild(input_data);
-                // add_button.disabled = true;
-                add_button.setAttribute('class', 'btn btn-secondary');
-                add_button.setAttribute("value", "キャンセル");
             }
-
-
         }
-        //フォーム登録なしに変更js
-        function func2() {
 
+
+        //名前➁の登録ありの場合のview フォーム表示　非表示切り替えjs
+        function myfunc(disp) {
+            var user_edit_button1_value = document.getElementById("user_edit_button1").value;
+            if (user_edit_button1_value == "追加") {
+                document.getElementById('child2name_display').style.display = disp;
+                document.getElementById('child2add').style.display = disp;
+                disp = 'inline';
+                document.getElementById('input_form1').style.display = disp;
+            } else if (user_edit_button1_value == "登録なしへ変更") {
+                document.getElementById('input_form1').style.display = disp;
+                document.getElementById('child2name_display').style.display = disp;
+                disp = 'inline';
+                document.getElementById('child2add').style.display = disp;
+            }
+        }
+        //名前➀の登録無しの場合のview フォーム表示　非表示切り替えjs
+        function myfunc2(disp2) {
+            var user_edit_button2_value = document.getElementById("user_edit_button2").value;
+            if (user_edit_button2_value == "追加") {
+                console.log("test");
+                document.getElementById('child2add2').style.display = disp2;
+                disp2 = 'inline';
+                document.getElementById('input_form2').style.display = disp2;
+            } else if (user_edit_button2_value == "登録なしへ変更") {
+                document.getElementById('input_form2').style.display = disp2;
+                disp2 = 'inline';
+                document.getElementById('child2add2').style.display = disp2;
+
+
+            }
         }
     </script>
 
@@ -237,89 +248,107 @@
                                 </div>
 
                                 ----------------------------------------------------------------------
-                                <p>名前➁の登録ありの場合</p>
-                                <div class="form-group">
-                                    <label>お子さんの名前➁</label>
-                                    <div class="col-xs-2"></div>
-                                    <div class="col-xs-2">
-                                        <input type=" text " id="username " class="form-control " placeholder="現在の名前を表示させる ">
+                                <p>名前➁の登録ありの場合のview</p>
+                                <div class="form-group" id="childname2_form">
+                                    <label>お子さんの名前➁</label><br>
+                                    <span id="input_form1">
+                                        <div class="form-group" id="input_form1">
+                                            登録無し
+                                        </div>
+                                    </span>
+                                    <div class="col-xs-2" id="child2">
+                                        <span id="child2name_display">
+                                        <input type=" text " id="child2name" class="form-control " placeholder="現在の名前を表示させる ">
+                                        </span>
                                     </div>
 
-                                    <input id="deletechildren" class="btn btn-secondary" type="submit" value="登録なしへ変更" onclick="func2()">
+                                    <div class="col-xs-2" id="child2add">
+                                        <input type=" text " id="child2addname" class="form-control " placeholder="お子さんの名前➁を入力してください ">
+                                    </div>
+
+
+                                    <script>
+                                        //初期表示はinput_form1　child2add　非表示
+                                        document.getElementById("input_form1").style.display = "none";
+                                        document.getElementById("child2add").style.display = "none ";
+                                    </script>
+
+                                    <input id="user_edit_button1" class="btn btn-secondary" type="submit" value="登録なしへ変更" onclick="button_click1();myfunc('none')">
 
 
                                 </div>
                                 ----------------------------------------------------------------------
-                                <p>名前➁の登録無しの場合</p>
-                                <div class="form-group">
+                                <p>名前➁の登録無しの場合のview</p>
+                                <div class="form-group ">
+                                    <label>お子さんの名前➁</label><br>
+                                    <span id="input_form2">
+                                        <div class="form-group" id="input_form2">
+                                            登録無し
+                                        </div>
+                                    </span>
 
-
-                                    <input id="secondchildren" class="btn btn-success" type="submit" value="追加" onclick="func1()">
-                                    <div class="form-group" id="input_form">
-                                        <!-- jsでinputタグ追加する -->
+                                    <div class="col-xs-2" id="child2add2">
+                                        <input type=" text " id="child2addname2" class="form-control " placeholder="お子さんの名前➁を入力してください ">
                                     </div>
+                                    <script>
+                                        //初期表示はchild2add2非表示
+                                        document.getElementById("child2add2").style.display = "none";
+                                    </script>
+                                    <input id="user_edit_button2" class="btn btn-success" type="submit" value="追加" onclick="button_click2();myfunc2('none')">
 
                                 </div>
 
-                                <!-- 
-                                    <select class="form-control select2bs4" onchange="addForm(this)" style="width: 100%;">
-                                        <option selected="selected" value=""></option>
-                                        <option id="secondchildren" value='add'>追加</option>
-                                        <option value='none'>登録無し</option>
-                                    </select> -->
-                            </div>
 
 
 
-
-                            <div class="form-group">
-                                <label>メールアドレス</label><span class=" badge badge-danger ">必須</span>
-                                <div class="col-xs-2">
-                                    <input type=" text " id="username " class="form-control " placeholder="現在のアドレスを表示させる ">
+                                <div class="form-group ">
+                                    <label>メールアドレス</label><span class=" badge badge-danger ">必須</span>
+                                    <div class="col-xs-2 ">
+                                        <input type=" text " id="username " class="form-control " placeholder="現在のアドレスを表示させる ">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label>パスワード</label><span class=" badge badge-danger ">必須</span>
-                                <div class="col-xs-2">
-                                    <input type=" text " id="username " class="form-control " placeholder="現在のパスワードを表示させる ">
+                                <div class="form-group ">
+                                    <label>パスワード</label><span class=" badge badge-danger ">必須</span>
+                                    <div class="col-xs-2 ">
+                                        <input type=" text " id="username " class="form-control " placeholder="現在のパスワードを表示させる ">
+                                    </div>
                                 </div>
-                            </div>
 
+
+                            </div>
 
                         </div>
 
                     </div>
 
+
                 </div>
+                <!-- /.container-fluid -->
+                <div class="card-footer ">
+                    <form action=" " method="post ">
+                        <p>
+                            <input class="btn btn-primary" type="submit" value="更新 ">
+                            <input class="btn btn-secondary" type="reset" value="キャンセル ">
+                        </p>
 
-
+                </div>
+            </section>
+            <!-- /.content -->
         </div>
-        <!-- /.container-fluid -->
-        <div class="card-footer">
-            <form action="" method="post">
-                <p>
-                    <input class="btn btn-primary" type="submit" value="更新">
-                    <input class="btn btn-secondary" type="reset" value="キャンセル">
-                </p>
+        <!-- /.content-wrapper -->
 
-        </div>
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
+        <footer class="main-footer ">
+            <div class="float-right d-none d-sm-block ">
+                <b>Version</b> 3.1.0-rc
+            </div>
+            <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io ">AdminLTE.io</a>.</strong> All rights reserved.
+        </footer>
 
-    <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-            <b>Version</b> 3.1.0-rc
-        </div>
-        <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-    </footer>
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark ">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 
