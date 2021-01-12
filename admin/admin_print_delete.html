@@ -70,7 +70,7 @@
             <!-- トップメニュー -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- ロゴ -->
-                <a href="starter.html" class="brand-link">
+                <a href="admin_starter.html" class="brand-link">
                     <img src="dist\img\logo1.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                     <span class="brand-text font-weight-light">管理画面</span>
                 </a>
@@ -223,12 +223,35 @@
                         <!-- /.container-fluid -->
                         <div class="card-footer">
                             <form action="" method="post">
-                                <p>
-                                    <input class="btn btn-danger" type="submit" value="削除">
-                                    <input class="btn btn-secondary" type="reset" value="キャンセル">
-                                </p>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-danger">
+                                    削除</button>
+                                <input class="btn btn-secondary" type="reset" value="キャンセル">
 
                         </div>
+                        <!-- /.modal -->
+
+                        <div class="modal fade" id="modal-danger">
+                            <div class="modal-dialog">
+                                <div class="modal-content bg-danger">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">コンテンツの削除</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>このコンテンツを削除してもよろしいでしょうか？</p>
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">閉じる</button>
+                                        <button type="button" class="btn btn-outline-light">削除して保存</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
                 </section>
                 <!-- /.content -->
                 </div>
@@ -284,53 +307,6 @@
             <!-- AdminLTE for demo purposes -->
             <script src="dist/js/demo.js"></script>
             <!-- Page specific script -->
-            <script>
-                $(function() {
-                            //Initialize Select2 Elements
-                            $('.select2').select2()
-
-                            //Initialize Select2 Elements
-                            $('.select2bs4').select2({
-                                theme: 'bootstrap4'
-                            })
-            </script>
-            <script>
-                $('.custom-file-input').on('change', handleFileSelect);
-
-                function handleFileSelect(evt) {
-                    $('#preview').remove(); // 繰り返し実行時の処理
-                    $(this).parents('.input-group').after('<div id="preview"></div>');
-
-                    var files = evt.target.files;
-
-                    for (var i = 0, f; f = files[i]; i++) {
-
-                        var reader = new FileReader();
-
-                        reader.onload = (function(theFile) {
-                            return function(e) {
-                                if (theFile.type.match('image.*')) {
-                                    var $html = ['<div class="d-inline-block mr-1 mt-1"><img class="img-thumbnail" src="', e.target.result, '" title="', escape(theFile.name), '" style="height:100px;" /><div class="small text-muted text-center">', escape(theFile.name), '</div></div>'].join(''); // 画像では画像のプレビューとファイル名の表示
-                                } else {
-                                    var $html = ['<div class="d-inline-block mr-1"><span class="small">', escape(theFile.name), '</span></div>'].join(''); //画像以外はファイル名のみの表示
-                                }
-
-                                $('#preview').append($html);
-                            };
-                        })(f);
-
-                        reader.readAsDataURL(f);
-                    }
-                    $(this).next('.custom-file-label').html(+files.length + '個のファイルを選択しました');
-                }
-
-                //ファイルの取消
-                $('.reset').click(function() {
-                    $(this).parent().prev().children('.custom-file-label').html('ファイル選択...');
-                    $('#preview').remove();
-                    $('.custom-file-input').val('');
-                })
-            </script>
 
 
 
