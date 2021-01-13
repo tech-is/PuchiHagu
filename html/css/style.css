@@ -1400,100 +1400,139 @@
     .box {
         text-align: center;
     }
+    /*スタンプ帳ページ
+---------------------------------------------------------------------------*/
     /***　おしゃれテーブル5　ポルカドット ***/
- 
-.osare5-table {
-    width:100%;
-    table-layout: fixed;
-      border: none !important;
-       border-collapse: separate;
-       border-spacing: 4px 4px;
-   }
-   
-   
-   .osare5-table th {
-      border: none !important;
-   }
-   
-   .osare5-table tbody td {
-     border: none !important;
-     background-color:#f0fff0 !important;
-     border-bottom: solid 2px #f9f9f9 !important;
-     background-image: radial-gradient(white 15%, transparent 16%),
-     radial-gradient(white 15%, transparent 16%);
-     background-size:30px 30px;
-     background-position: 0 0, 15px 15px;
-   
-   }
-   
-   /* ヘッダー */
-   .osare5-table thead th {
-     font-weight: bold;
-     border-radius: 5px 5px 5px 5px;
-     background:#f6f0ff;
-   }
-   
-   /* フッター（比較表と色つけたとき用） */
-   .osare5-table tfoot td {
-   border-radius: 0 0 10px 10px;
-   }
     
+    .osare5-table {
+        width: 100%;
+        table-layout: fixed;
+        border: none !important;
+        border-collapse: separate;
+        border-spacing: 4px 4px;
+    }
     
-   /* ボディ項目 */
-   .osare5-table tbody th {
-     border-radius: 5px 5px 5px 5px;
-     background:#fffcf0;
-     font-weight: bold;
-     border-bottom: solid 2px #f9f9f9 !important;
-     line-height:4.5em;
-   }
+    .osare5-table th {
+        border: none !important;
+    }
     
-   /* フッター項目 */
-   .osare5-table tfoot th {
-    background:none;
-    line-height:3em;
-    font-weight: bold;
-   }
-   
-   
-   /* フッターデータ(フッターがあるときのみ有効) */
-   .osare5-hikaku tfoot td {
-    border: none !important;
-    background:none;
-    text-align:center;
-    font-weight:600;
-    font-size:1em;
-   }
-   
+    .osare5-table tbody td {
+        border: none !important;
+        background-color: #f0fff0 !important;
+        border-bottom: solid 2px #f9f9f9 !important;
+        background-image: radial-gradient(white 15%, transparent 16%), radial-gradient(white 15%, transparent 16%);
+        background-size: 30px 30px;
+        background-position: 0 0, 15px 15px;
+    }
+    /* ヘッダー */
     
-   /* ボディデータ */
-   .osare5-table tbody td {
-    text-align:center;
-   }
+    .osare5-table thead th {
+        font-weight: bold;
+        border-radius: 5px 5px 5px 5px;
+        background: #f6f0ff;
+    }
+    /* フッター（比較表と色つけたとき用） */
     
-   .osare5-table thead th:first-child  {
-     background:none;
-   }
-   
+    .osare5-table tfoot td {
+        border-radius: 0 0 10px 10px;
+    }
+    /* ボディ項目 */
     
-   /* 最終行のボーダーをなくす */
-   .osare5-table tbody tr:last-child th,
-   .osare5-table tbody tr:last-child td {
-    border-bottom:none !important;
-   }
-   
-   /* スマホ調整 */
-   @media (max-width: 767px) {
-     .osare5-table thead th,
-     .osare5-table tbody th {
-         padding:0;
-     }
-     .osare5-table tfoot td {
-     padding:0;
-     font-size:0.9em;
-     }
-   .osare5-table tfoot td:nth-child(2) {
-      font-size:1em;
-     }
-     
-   }
+    .osare5-table tbody th {
+        border-radius: 5px 5px 5px 5px;
+        background: #fffcf0;
+        font-weight: bold;
+        border-bottom: solid 2px #f9f9f9 !important;
+        line-height: 4.5em;
+    }
+    /* フッター項目 */
+    
+    .osare5-table tfoot th {
+        background: none;
+        line-height: 3em;
+        font-weight: bold;
+    }
+    /* フッターデータ(フッターがあるときのみ有効) */
+    
+    .osare5-hikaku tfoot td {
+        border: none !important;
+        background: none;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1em;
+    }
+    /* ボディデータ */
+    
+    .osare5-table tbody td {
+        text-align: center;
+    }
+    
+    .osare5-table thead th:first-child {
+        background: none;
+    }
+    /* 最終行のボーダーをなくす */
+    
+    .osare5-table tbody tr:last-child th,
+    .osare5-table tbody tr:last-child td {
+        border-bottom: none !important;
+    }
+    /* スマホ調整 */
+    
+    @media (max-width: 767px) {
+        .osare5-table thead th,
+        .osare5-table tbody th {
+            padding: 0;
+        }
+        .osare5-table tfoot td {
+            padding: 0;
+            font-size: 0.9em;
+        }
+        .osare5-table tfoot td:nth-child(2) {
+            font-size: 1em;
+        }
+    }
+    /* 画像配置調整 */
+    
+    .stampimghead {
+        text-align: center;
+    }
+    /* newリボン */
+    
+    .ribbon19-wrapper {
+        display: block;
+        position: relative;
+        margin: auto;
+        padding: 10px 0;
+        width: auto;
+        height: auto;
+        box-sizing: border-box;
+    }
+    
+    .ribbon19-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 85px;
+        height: 85px;
+        overflow: hidden;
+    }
+    
+    .ribbon19 {
+        display: inline-block;
+        position: absolute;
+        padding: 5px 0;
+        left: -24px;
+        top: 20px;
+        width: 160px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 7px;
+        background: #f10a15;
+        color: #fff;
+        letter-spacing: 0.05em;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        box-shadow: 0 0 0 2px rgb(245, 86, 74);
+        border-top: dashed 1px rgba(255, 255, 255, 0.65);
+        border-bottom: dashed 1px rgba(255, 255, 255, 0.65);
+    }
