@@ -1400,3 +1400,28 @@
     .box {
         text-align: center;
     }
+
+
+    /* フォーム内のボタンのレイアウト
+---------------------------------------------------------------------------*/
+
+
+    input[type="submit"].btn,
+    input[type="button"].btn,
+    input[type="reset"].btn {
+        -webkit-appearance: none;
+        outline: none;
+        border: 1px solid #f38080;
+        background: #f38080;
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 100px;
+        font-size: 16px;
+    }
+    
+    input[type="submit"].btn:hover,
+    input[type="button"].btn:hover,
+    input[type="reset"].btn:hover {
+        background: #fff;
+        color: #f38080;
+    }
