@@ -25,67 +25,34 @@
     <link href="dist/css/adminlte.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
-    <!-- daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-    <!-- iCheck for checkboxes and radio inputs -->
-    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- Bootstrap Color Picker -->
-    <link rel="stylesheet" href="plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- Select2 -->
-    <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
-    <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
-    <!-- Bootstrap4 Duallistbox -->
-    <link rel="stylesheet" href="plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
-    <!-- BS Stepper -->
-    <link rel="stylesheet" href="plugins/bs-stepper/css/bs-stepper.min.css">
-    <!-- dropzonejs -->
-    <link rel="stylesheet" href="plugins/dropzone/min/dropzone.min.css">
 
     <style>
-        .custom-file {
-            max-width: 20rem;
-            overflow: hidden;
-        }
-        
-        .custom-file-label {
-            white-space: nowrap;
-        }
-        
         .btn {
             margin-top: 5px;
             margin-bottom: 5px;
         }
     </style>
     <script>
-        //ボタンの切り替えjs
+        //名前➁の登録ありの場合　ボタンの色と文字の表示を切り替えるjs
+
         function button_click1() {
             var user_edit_button1 = document.getElementById("user_edit_button1");
-            var user_edit_button1_value = document.getElementById("user_edit_button1").value;
-            if (user_edit_button1_value == "登録なしへ変更") {
+            if (user_edit_button1.value == "登録なしへ変更") {
                 user_edit_button1.setAttribute('class', 'btn btn-success');
                 user_edit_button1.setAttribute("value", "追加");
-            } else if (user_edit_button1_value == "追加") {
+            } else if (user_edit_button1.value == "追加") {
                 user_edit_button1.setAttribute('class', 'btn btn-secondary');
                 user_edit_button1.setAttribute("value", "登録なしへ変更");
 
             }
         }
-
+        //名前➁の登録無しの場合　ボタンの色と文字の表示を切り替えるjs
         function button_click2() {
             var user_edit_button2 = document.getElementById("user_edit_button2");
-            var user_edit_button2_value = document.getElementById("user_edit_button2").value;
-            if (user_edit_button2_value == "登録なしへ変更") {
+            if (user_edit_button2.value == "登録なしへ変更") {
                 user_edit_button2.setAttribute('class', 'btn btn-success');
                 user_edit_button2.setAttribute("value", "追加");
-            } else if (user_edit_button2_value == "追加") {
+            } else if (user_edit_button2.value == "追加") {
                 user_edit_button2.setAttribute('class', 'btn btn-secondary');
                 user_edit_button2.setAttribute("value", "登録なしへ変更");
 
@@ -93,23 +60,26 @@
         }
 
 
-        //名前➁の登録ありの場合のview フォーム表示　非表示切り替えjs
-        function myfunc(disp) {
+        //名前➁の登録ありの場合　 フォーム表・非表示切り替えjs
+        function switching(disp) {
             var user_edit_button1_value = document.getElementById("user_edit_button1").value;
+            //※ここでのuser_edit_button1のvalueは、function buton_clickの処理後に取得される
             if (user_edit_button1_value == "追加") {
                 document.getElementById('child2name_display').style.display = disp;
                 document.getElementById('child2add').style.display = disp;
                 disp = 'inline';
+                //input_form1の登録無しの文言のみ表示させる
                 document.getElementById('input_form1').style.display = disp;
             } else if (user_edit_button1_value == "登録なしへ変更") {
                 document.getElementById('input_form1').style.display = disp;
                 document.getElementById('child2name_display').style.display = disp;
                 disp = 'inline';
+                //お子さんの名前➁の入力フォームのみ表示させる
                 document.getElementById('child2add').style.display = disp;
             }
         }
-        //名前➀の登録無しの場合のview フォーム表示　非表示切り替えjs
-        function myfunc2(disp2) {
+        //名前➁の登録無しの場合 フォーム表示・非表示切り替えjs
+        function switching2(disp2) {
             var user_edit_button2_value = document.getElementById("user_edit_button2").value;
             if (user_edit_button2_value == "追加") {
                 console.log("test");
@@ -252,7 +222,7 @@
                                 <div class="form-group" id="childname2_form">
                                     <label>お子さんの名前➁</label><br>
                                     <span id="input_form1">
-                                        <div class="form-group" id="input_form1">
+                                        <div class="form-group" id="input_form_none">
                                             登録無し
                                         </div>
                                     </span>
@@ -273,7 +243,8 @@
                                         document.getElementById("child2add").style.display = "none ";
                                     </script>
 
-                                    <input id="user_edit_button1" class="btn btn-secondary" type="submit" value="登録なしへ変更" onclick="button_click1();myfunc('none')">
+                                    <!-- onclickで、まずはbutton_click1のファンクションを実行。その後switchingのファンクションへnoneを引数として渡す -->
+                                    <input id="user_edit_button1" class="btn btn-secondary" type="submit" value="登録なしへ変更" onclick="button_click1();switching('none')">
 
 
                                 </div>
@@ -294,7 +265,7 @@
                                         //初期表示はchild2add2非表示
                                         document.getElementById("child2add2").style.display = "none";
                                     </script>
-                                    <input id="user_edit_button2" class="btn btn-success" type="submit" value="追加" onclick="button_click2();myfunc2('none')">
+                                    <input id="user_edit_button2" class="btn btn-success" type="submit" value="追加" onclick="button_click2();switching2('none')">
 
                                 </div>
 
