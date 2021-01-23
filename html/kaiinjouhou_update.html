@@ -26,52 +26,28 @@
 
             }
         }
-        //名前➁の登録無しの場合　ボタンの色と文字の表示を切り替えるjs
-        function button_click2() {
-            var user_edit_button2 = document.getElementById("user_edit_button2");
-            if (user_edit_button2.value == "登録なしへ変更") {
-                user_edit_button2.setAttribute('class', 'btn btn-success');
-                user_edit_button2.setAttribute("value", "追加");
-            } else if (user_edit_button2.value == "追加") {
-                user_edit_button2.setAttribute('class', 'btn btn-secondary');
-                user_edit_button2.setAttribute("value", "登録なしへ変更");
 
-            }
-        }
 
 
         //名前➁の登録ありの場合　 フォーム表・非表示切り替えjs
-        function switching(disp) {
+        function switching() {
             var kaiinjouhou_update_button1_value = document.getElementById("kaiinjouhou_update_button1").value;
             //※ここでのkaiinjouhou_update_button1のvalueは、function buton_clickの処理後に取得される
+
             if (kaiinjouhou_update_button1_value == "追加") {
-                document.getElementById('kaiinjouhou_child2name_display').style.display = disp;
-                document.getElementById('kaiinjouhou-child2add').style.display = disp;
-                disp = 'inline';
-                //none-form1の登録無しの文言のみ表示させる
-                document.getElementById('none-form1').style.display = disp;
+                $('#kaiinjouhou_child2name_display').hide();
+                $('#kaiinjouhou-child2add').hide();
+                $('#child2birthday').hide();
+
+                //登録無しの文言のみ表示させる
+                $("#none-form1").show();
             } else if (kaiinjouhou_update_button1_value == "登録なしへ変更") {
-                document.getElementById('none-form1').style.display = disp;
-                document.getElementById('kaiinjouhou_child2name_display').style.display = disp;
-                disp = 'inline';
-                //お子さんの名前➁の入力フォームのみ表示させる
-                document.getElementById('kaiinjouhou-child2add').style.display = disp;
-            }
-        }
-        //名前➁の登録無しの場合 フォーム表示・非表示切り替えjs
-        function switching2(disp2) {
-            var user_edit_button2_value = document.getElementById("user_edit_button2").value;
-            if (user_edit_button2_value == "追加") {
-                console.log("test");
-                document.getElementById('child2add2').style.display = disp2;
-                disp2 = 'inline';
-                document.getElementById('input_form2').style.display = disp2;
-            } else if (user_edit_button2_value == "登録なしへ変更") {
-                document.getElementById('input_form2').style.display = disp2;
-                disp2 = 'inline';
-                document.getElementById('child2add2').style.display = disp2;
+                $('#none-form1').hide();
+                $('#kaiinjouhou_child2name_display').hide();
 
-
+                //お子さんの名前➁の入力フォームと誕生日のみ表示させる
+                $("#kaiinjouhou-child2add").show();
+                $("#child2birthday").show();
             }
         }
     </script>
@@ -132,20 +108,87 @@
                     </div>
 
                     <div class="form-group row form-inline justify-content-center">
-                        <label for="childname1 " class="col-sm-2 col-form-label font-weight-bold">お子さま<br>1人目の名前</label>
+                        <label for="childname1 " class="col-sm-2 col-form-label font-weight-bold">お子さま1人目の名前</label>
                         <div class="col-xs-2">
                             <input type="text " id="childname1 " class="form-control " placeholder="名前を表示させる ">
                         </div>
                     </div>
                     <div class="form-group row form-inline justify-content-center">
-                        <label for="childname2" class="col-sm-2 col-form-label font-weight-bold">お子さま<br>2人目の名前</label>
+                        <label for="childname1 " class="col-sm-2 col-form-label font-weight-bold">誕生日</label>
+                        <div class="form-group">
+                            <select class="form-control" 　name="year">
+                                <option value="">-</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" 　name="month">
+                                <option value="">-</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" 　name="day">
+                                <option value="">-</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="form-group row form-inline justify-content-center">
+                        <label for="childname2" class="col-sm-2 col-form-label font-weight-bold">お子さま2人目の名前</label>
                         <div class="col-xs-2" 　id="kaiinjouhou_child2name_display">
                             <span id="kaiinjouhou_child2name_display">
                             <input type="text " id="child2name" class="form-control" placeholder="名前を表示させる">
                             </span>
                         </div>
-                        <span id="none-form1" class="col-xs-2">
-                                <p class=""id="input_form_none">登録無し</p>
+                        <span id="none-form1">
+                                <p class="kaiinjouhou_update_center">登録無し</p>
                         </span>
                         <div class="col-xs-2" id="kaiinjouhou-child2add">
                             <input type=" text " id="child2addname" class="form-control " placeholder="お子さんの名前➁を入力してください ">
@@ -153,17 +196,80 @@
                     </div>
 
 
+                    <div class="form-group row form-inline justify-content-center" id="child2birthday">
+                        <label for="child2birthday" class="col-sm-2 col-form-label font-weight-bold">誕生日</label>
+                        <div class="form-group">
+                            <select class="form-control" 　name="year">
+                                    <option value="">-</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" 　name="month">
+                                    <option value="">-</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" 　name="day">
+                                    <option value="">-</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    </select>
+
+                        </div>
+
+                    </div>
                     <div class="kaiinjouhou_update_button1">
                         <!-- onclickで、まずはbutton_click1のファンクションを実行。その後switchingのファンクションへnoneを引数として渡す -->
-                        <input id="kaiinjouhou_update_button1" class="btn btn-secondary" type="button" value="登録なしへ変更" onclick="button_click1();switching('none')">
+                        <input id="kaiinjouhou_update_button1" class="btn btn-secondary" type="button" value="登録なしへ変更" onclick="button_click1();switching()">
                     </div>
 
-
-                    <script>
-                        //初期表示
-                        document.getElementById("none-form1").style.display = "none";
-                        document.getElementById("kaiinjouhou-child2add").style.display = "none ";
-                    </script>
 
 
 
@@ -198,9 +304,18 @@
         <a href="# "><img src="images/pagetop.png " alt="PAGE TOP "></a>
     </p>
 
-</body>
-<!-- jQuery -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            //初期表示を非表示にする
+            $('#none-form1').hide();
+            $('#kaiinjouhou-child2add').hide();
+        });
+    </script>
+
+
+</body>
 
 </html>
