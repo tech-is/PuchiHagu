@@ -1343,7 +1343,7 @@ a.btn--orange:hover {
 }
 
 
-/* kaiinjouhouhenkouページ以下 
+/* kaiinjouhou_updateページ以下 
 ---------------------------------------------------------------------------*/
 
 .message-user-kaiin {
@@ -1407,6 +1407,15 @@ a.btn--orange:hover {
     background-color: #4b4a4a;
     border-color: #726f6f;
     color: #FFF;
+}
+
+.kaiinjouhou_update_button1 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.kaiinjouhou_update_center {
+    text-align: center;
 }
 
 
