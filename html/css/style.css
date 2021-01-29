@@ -1654,6 +1654,461 @@ input[type=password]:focus {
         padding: 0;
         font-size: 0.9em;
     }
+<<<<<<< HEAD
+    
+    .right-frills {
+        left: 164px;
+        top: 28.5px;
+        margin-left: 570px;
+    }
+    
+    .active .right-frills {
+        animation: move-right 0.38s ease-out, width-to-zero 0.38s ease-out;
+    }
+    
+    .right-frills:before,
+    .right-frills:after {
+        right: 15px;
+    }
+    
+    .active .right-frills:before {
+        animation: width-to-zero 0.38s ease-out, move-up 0.38s ease-out;
+    }
+    
+    .active .right-frills:after {
+        animation: width-to-zero 0.38s ease-out, move-down 0.38s ease-out;
+    }
+    
+    .left-frills:before,
+    .right-frills:after {
+        transform: rotate(34deg);
+    }
+    
+    .left-frills:after,
+    .right-frills:before {
+        transform: rotate(-34deg);
+    }
+    
+    @keyframes move-left {
+        0% {
+            transform: none;
+        }
+        65% {
+            transform: translateX(-80px);
+        }
+        100% {
+            transform: translateX(-80px);
+        }
+    }
+    
+    @keyframes move-right {
+        0% {
+            transform: none;
+        }
+        65% {
+            transform: translateX(80px);
+        }
+        100% {
+            transform: translateX(80px);
+        }
+    }
+    
+    @keyframes width-to-zero {
+        0% {
+            width: 38px;
+        }
+        100% {
+            width: 8px;
+        }
+    }
+    
+    @keyframes move-up {
+        100% {
+            bottom: 69.75px;
+        }
+    }
+    
+    @keyframes move-down {
+        100% {
+            top: 69.75px;
+        }
+    }
+    /*会員登録情報コンテンツ　ボタン */
+    
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+    
+    html {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 62.5%;
+        /*rem算出をしやすくするために*/
+    }
+    
+    .btn,
+    a.btn,
+    button.btn {
+        font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+        font-size: 2.6rem;
+        font-weight: 700;
+        line-height: 1.5;
+        position: relative;
+        display: inline-block;
+        padding: 1rem 4rem;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        color: #212529;
+        border-radius: 0.5rem;
+    }
+    
+    .btn--orange,
+    a.btn--orange {
+        color: #545454;
+        background-color: #fff;
+        font-size: 2.3rem;
+        width: 25%;
+        height: 96px;
+        margin-bottom: 31px;
+        border-right: 1px solid #F6F6F6;
+        float: left;
+        text-align: center;
+    }
+    
+    .btn--orange:hover,
+    a.btn--orange:hover {
+        color: rgba(248, 20, 134, 0.637);
+        background: #ffffff;
+    }
+    /* コンテンツ　リンク　ボタン */
+    
+    .btn-circle-stitch-blue {
+        font-size: 3.6rem;
+        display: inline-block;
+        text-decoration: none;
+        background: #87befd;
+        color: #FFF;
+        width: 190px;
+        height: 190px;
+        line-height: 180px;
+        border-radius: 50%;
+        text-align: center;
+        overflow: hidden;
+        box-shadow: 0px 0px 0px 5px #87befd;
+        border: dashed 5px #FFF;
+        transition: .10s;
+        margin-right: 34px;
+    }
+    
+    .btn-circle-stitch-blue:hover {
+        color: #FFF;
+        background: #668ad8;
+        box-shadow: 0px 0px 0px 5px #668ad8;
+    }
+    
+    .btn-circle-stitch-green {
+        font-size: 3.6rem;
+        display: inline-block;
+        text-decoration: none;
+        background: #a3fd87ef;
+        color: #FFF;
+        width: 190px;
+        height: 190px;
+        line-height: 180px;
+        border-radius: 50%;
+        text-align: center;
+        overflow: hidden;
+        box-shadow: 0px 0px 0px 5px #a3fd87ef;
+        border: dashed 5px #FFF;
+        transition: .10s;
+        margin-right: 34px;
+    }
+    
+    .btn-circle-stitch-green:hover {
+        color: #FFF;
+        background: #279705d3;
+        box-shadow: 0px 0px 0px 5px #279705d3;
+    }
+    
+    .btn-circle-stitch-yellow {
+        font-size: 3.6rem;
+        display: inline-block;
+        text-decoration: none;
+        background: #faf767;
+        color: #FFF;
+        width: 190px;
+        height: 190px;
+        line-height: 180px;
+        border-radius: 50%;
+        text-align: center;
+        overflow: hidden;
+        box-shadow: 0px 0px 0px 5px #faf767;
+        border: dashed 5px #FFF;
+        transition: .10s;
+        margin-right: 34px;
+    }
+    
+    .btn-circle-stitch-yellow:hover {
+        color: #FFF;
+        background: #f1ee0f;
+        box-shadow: 0px 0px 0px 5px #f1ee0f;
+    }
+    
+    .btn-circle-stitch-orange {
+        font-size: 3.6rem;
+        display: inline-block;
+        text-decoration: none;
+        background: #facb67;
+        color: #FFF;
+        width: 190px;
+        height: 190px;
+        line-height: 180px;
+        border-radius: 50%;
+        text-align: center;
+        overflow: hidden;
+        box-shadow: 0px 0px 0px 5px #facb67;
+        border: dashed 5px #FFF;
+        transition: .10s;
+        margin-right: 34px;
+    }
+    
+    .btn-circle-stitch-orange:hover {
+        color: #FFF;
+        background: #f8ab04;
+        box-shadow: 0px 0px 0px 5px#f8ab04;
+    }
+    
+    .btn-circle-stitch-red {
+        font-size: 2.3rem;
+        display: inline-block;
+        text-decoration: none;
+        background: #fa8967;
+        color: #FFF;
+        width: 190px;
+        height: 190px;
+        line-height: 180px;
+        border-radius: 50%;
+        text-align: center;
+        overflow: hidden;
+        box-shadow: 0px 0px 0px 5px #fa8967;
+        border: dashed 5px #FFF;
+        transition: .10s;
+        margin-right: 34px;
+    }
+    
+    .btn-circle-stitch-red:hover {
+        color: #FFF;
+        background: #f55625;
+        box-shadow: 0px 0px 0px 5px#f55625;
+    }
+    /* kaiinjouhouhenkouページ以下 
+---------------------------------------------------------------------------*/
+    
+    .message-user-kaiin {
+        font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+        font-size: 145%;
+        margin-left: 0%;
+        margin-top: 0%;
+        margin-bottom: 0%;
+        padding: 0%;
+        text-align: center;
+    }
+    
+    .box1 {
+        font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    }
+    
+    .sectionHeader {
+        font-size: 180%;
+    }
+    
+    .tourokujouhou {
+        text-align: center;
+    }
+    
+    .add-submit {
+        display: inline-block;
+        max-width: 150px;
+        text-align: center;
+        border: 2px solid#EA1323;
+        font-size: 16px;
+        color: #EA1323;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 2px 25px;
+        border-radius: 5px;
+        transition: .4s;
+        margin-top: 50px;
+    }
+    
+    .add-submit:hover {
+        background-color: #EA1323;
+        border-color: #e74752;
+        color: #FFF;
+    }
+    
+    .reset-submit {
+        display: inline-block;
+        max-width: 150px;
+        text-align: center;
+        border: 2px solid#4b4a4a;
+        font-size: 16px;
+        color: #4b4a4a;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 2px 19px;
+        border-radius: 5px;
+        transition: .4s;
+    }
+    
+    .reset-submit:hover {
+        background-color: #4b4a4a;
+        border-color: #726f6f;
+        color: #FFF;
+    }
+    /* passwordchange
+---------------------------------------------------------------------------*/
+    
+    .message-user-kaiin {
+        font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+        font-size: 125%;
+        margin-left: 0%;
+        margin-top: 0%;
+        margin-bottom: 0%;
+        padding: 0;
+        text-align: center;
+    }
+    
+    input[type=password]:focus {
+        color: #003a6c;
+        background-color: #ffe7d9;
+    }
+    
+    .box1 {
+        font-family: "M PLUS Rounded 1c", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    }
+    
+    .form-group row {
+        font-size: 20px;
+    }
+    
+    .form-control {
+        font-size: 20px;
+    }
+    
+    .container {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    /*ログインフォーム
+---------------------------------------------------------------------------*/
+    
+    .form {
+        width: 100%;
+        margin: 0 auto;
+        border: 1px solid #9c9c9c;
+        padding: 50px;
+        box-sizing: border-box;
+    }
+    
+    .item {
+        margin-bottom: 20px;
+    }
+    
+    .label_left {
+        display: inline-block;
+        width: 25%;
+        border-left: solid 5px #5250e0;
+        padding-left: 15px;
+        vertical-align: top;
+    }
+    
+    .form input[type="text"],
+    .form input[type="number"],
+    .form input[type="email"],
+    .form input[type="password"] {
+        padding: 10px;
+        width: 65%;
+    }
+    
+    .form textarea {
+        padding: 10px;
+        height: 100px;
+        font-size: 14px;
+        width: 65%;
+    }
+    
+    .form select {
+        height: 35px;
+        width: 65%;
+    }
+    
+    .btns {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .form input[type="submit"] {
+        background: #5250e0;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 20px;
+        margin: 0 5px;
+    }
+    
+    .form input[type="reset"] {
+        background: #333;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 20px;
+        margin: 0 5px;
+    }
+    /*コンテンツのセンタリング
+---------------------------------------------------------------------------*/
+    
+    .box {
+        text-align: center;
+    }
+
+
+    /* フォーム内のボタンのレイアウト
+---------------------------------------------------------------------------*/
+
+
+    input[type="submit"].btn,
+    input[type="button"].btn,
+    input[type="reset"].btn {
+        -webkit-appearance: none;
+        outline: none;
+        border: 1px solid #f38080;
+        background: #f38080;
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 100px;
+        font-size: 16px;
+    }
+    
+    input[type="submit"].btn:hover,
+    input[type="button"].btn:hover,
+    input[type="reset"].btn:hover {
+        background: #fff;
+        color: #f38080;
+    }
+=======
     .osare5-table tfoot td:nth-child(2) {
         font-size: 1em;
     }
@@ -1713,3 +2168,4 @@ input[type=password]:focus {
     border-top: dashed 1px rgba(255, 255, 255, 0.65);
     border-bottom: dashed 1px rgba(255, 255, 255, 0.65);
 }
+>>>>>>> bec3d5eef1ba1ff97daf577f6d3646574e4fb5b5
