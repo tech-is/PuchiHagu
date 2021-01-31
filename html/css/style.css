@@ -1203,7 +1203,8 @@ button.btn {
 .btn--orange,
 a.btn--orange {
     color: #545454;
-    background-color: #fff;
+    background: rgb(252, 250, 245);
+    /*背景色*/
     font-size: 2.3rem;
     width: 25%;
     height: 96px;
@@ -1216,7 +1217,8 @@ a.btn--orange {
 .btn--orange:hover,
 a.btn--orange:hover {
     color: rgba(248, 20, 134, 0.637);
-    background: #ffffff;
+    background: rgb(252, 250, 245);
+    /*背景色*/
 }
 
 
@@ -1597,7 +1599,8 @@ input[type=password]:focus {
 
 .table-th-hiragana-space {
     border-radius: 5px 5px 5px 5px;
-    background: #ffffff;
+    background: rgb(252, 250, 245);
+    /*背景色*/
     font-weight: bold;
     border-bottom: solid 2px #f9f9f9 !important;
     line-height: 4.5em;
@@ -1714,132 +1717,129 @@ input[type=password]:focus {
     border-bottom: dashed 1px rgba(255, 255, 255, 0.65);
 }
 
+
 /*ボタンたち*/
+
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 62.5%;/*rem算出をしやすくするために*/
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /*rem算出をしやすくするために*/
 }
 
 .btn,
 a.btn,
 button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-  padding: 1rem 4rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
 }
 
 a.btn--yellow {
     color: #000;
     background-color: #fff100;
     border-bottom: 5px solid #ccc100;
-  }
-  
-  a.btn--yellow:hover {
+}
+
+a.btn--yellow:hover {
     margin-top: 3px;
     color: #000;
     background: # fff20a;
     border-bottom: 2px solid #ccc100;
-  }
+}
 
-
-  *,
+*,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 62.5%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
 }
 
 .btn,
 a.btn,
 button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-  padding: 1rem 4rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
 }
+
 
 /*印刷するのボタンたち*/
 
 a.btn-malformation1 {
-  font-size: 2rem;
-
-  padding: 3rem 4rem;
-
-  color: #fff;
-  border-radius: 100% 80px / 80px 100%;
-  background-color: #fab9c7;
+    font-size: 2rem;
+    padding: 3rem 4rem;
+    color: #fff;
+    border-radius: 100% 80px / 80px 100%;
+    background-color: #fab9c7;
 }
 
 a.btn-malformation1:hover {
-  color: #fff;
-  border-radius: 60% 80% / 100% 80%;
+    color: #fff;
+    border-radius: 60% 80% / 100% 80%;
 }
 
 a.btn-malformation2 {
     font-size: 2rem;
-  
     padding: 3rem 4rem;
-  
     color: #fff;
     border-radius: 100% 80px / 80px 100%;
     background-color: #9ed0f1;
-  }
-  
-  a.btn-malformation2:hover {
+}
+
+a.btn-malformation2:hover {
     color: #fff;
     border-radius: 60% 80% / 100% 80%;
-  }
+}
 
 a.btn-malformation3 {
     font-size: 2rem;
-  
     padding: 3rem 4rem;
-  
     color: #fff;
     border-radius: 100% 80px / 80px 100%;
     background-color: #c0eeb2;
@@ -1852,9 +1852,7 @@ a.btn-malformation3:hover {
 
 a.btn-malformation4 {
     font-size: 2rem;
-  
     padding: 3rem 4rem;
-  
     color: #fff;
     border-radius: 100% 80px / 80px 100%;
     background-color: hsl(56, 71%, 77%);
@@ -1865,12 +1863,9 @@ a.btn-malformation4:hover {
     border-radius: 60% 80% / 100% 80%;
 }
 
-
 a.btn-malformation5 {
     font-size: 2rem;
-  
     padding: 3rem 4rem;
-  
     color: #fff;
     border-radius: 100% 80px / 80px 100%;
     background-color: hsl(293, 49%, 83%);
