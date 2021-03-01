@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-//コントローラーの名前をAdminlogin
-class Login extends CI_Controller {
+//コントローラーの名前をAdmin
+class Admin extends CI_Controller {
 
 
      //コンストラクト未設定
@@ -15,9 +15,15 @@ class Login extends CI_Controller {
     //     date_default_timezone_set('Asia/Tokyo');
     // }
 	public function index()
-	{
+	{   // ここにセッション書く
 		$this->load->view('login_view');
 	}
+
+    public function login()
+    {
+       
+    
+    }
 }
 
 
