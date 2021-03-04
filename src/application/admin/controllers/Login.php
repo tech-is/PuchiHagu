@@ -25,7 +25,7 @@ class Login extends CI_Controller {
     public function login_check()
     {   
         $data = $this->input->post();
-        $result =
+        $result = $this->login_model->login_check($data);
 
     }
 }
