@@ -81,7 +81,7 @@
                     <a href="forgot-password.html">パスワードを忘れた場合</a>
                 </p>
                 <p class="mb-0">
-                    <a href="register.html" class="text-center">新規ユーザー登録</a>
+                    <a href="register.php" class="text-center">新規ユーザー登録</a>
                 </p>
             </div>
             <!-- /.login-card-body -->
