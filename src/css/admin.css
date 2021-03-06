@@ -1,0 +1,112 @@
+@charset "utf-8";
+.login-error {
+    margin: 0 0 0 10px;
+    font-size: 14px;
+    color: rgb(238, 23, 23);
+}
+
+
+/* .login-page {
+    height: 70vh;
+}
+
+.login-logo,
+.register-logo {
+    font-size: 1.6em;
+}
+
+.user-panel img {
+    width: 2.8rem;
+}
+
+.td-c {
+    text-align: center;
+}
+
+.btn-c {
+    display: inline-block;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.btn-li {
+    margin-right: 30px;
+}
+
+.modal-title span {
+    margin-left: 10px;
+}
+
+.row-box {
+    margin-bottom: 10px;
+}
+
+.login-error p {
+    margin: 0 0 0 10px;
+    color: brown;
+}
+
+.error_p {
+    margin: 0;
+    color: brown;
+}
+
+.register-box {
+    margin: 0 auto;
+}
+
+.register-error,
+.login-error {
+    text-align: center;
+}
+
+.btn-wrap {
+    display: flex;
+}
+
+.src-wrap {
+    width: 220px;
+    margin-right: 10px;
+}
+
+.chk-wrap {
+    width: 290px;
+}
+
+#checkbox,
+#all {
+    transform: scale(1.2);
+    margin: 5px;
+}
+
+.board-check-item {
+    width: 130px;
+    margin: 10px;
+}
+
+.chk-item {
+    width: 120px;
+}
+
+.board-select-group {
+    margin: 10px;
+}
+
+.borad-select {
+    width: 120px;
+}
+
+.sarch-box,
+.check-box {
+    display: flex;
+    align-items: center;
+}
+
+.del-cmt {
+    padding-left: 5px;
+    font-size: 0.8em;
+    color: rgb(204, 79, 79);
+}
+
+© 2021 GitHub,
+Inc. */

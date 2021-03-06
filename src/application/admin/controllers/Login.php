@@ -14,11 +14,22 @@ class Login extends CI_Controller {
 
 	public function index()
 	{   
-        $login_error ='';
-        if($this->input->post('login_submit')&& $this->form_validation->run('login'){
-        $login_error =$this->login_check();
-        }
-		$this->load->view('login_view');
+        $login ='';
+        //設定ファイルから設定項目を読み取る。$autoload['config']に設定する
+        // configファイル(form_validation.php)からloginの配列を取得
+        $rules = $this->config->item("login");
+        // 上記で取得した配列をバリデーションルールに追加
+        $this->form_validation->set_rules($rules);
+        // フォームが送信された且つ、バリデーションがtrueだった場合
+        //falseだった場合viewのエラー表示
+        if($this->input->post('login_submit')&& $this->form_validation->run()){
+        // $login =$this->login_check();
+    }else{
+        //エラーメッセージを配列で返す
+        $data['error_message']= $this->form_validation->error_array();
+    }
+    
+		$this->load->view('login_view',$data);
 
 	}
 

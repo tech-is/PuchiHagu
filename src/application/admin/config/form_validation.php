@@ -6,7 +6,8 @@ $config =array(
             'label'=>'メールアドレス',
             'rules'=>'required',
             'errors'=>array(
-            'reruired'=>'{field}は必須です。'
+                'required'=>'%sの入力は必須です。'
+            //arrayの形式にしているのは複数エラーメッセージを出すこともできるため
             )
         ),
         array(
@@ -14,7 +15,8 @@ $config =array(
             'label'=>'パスワード',
             'rules'=>'required',
             'errors'=>array(
-                'required'=>'{field}は必須です。'
+                'required'=>'%sの入力は必須です。'
             )
         )
+    )
 );

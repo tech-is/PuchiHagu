@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+
 </head>
 
 <body class="hold-transition login-page">
@@ -21,10 +23,14 @@
         <div class="login-logo">
             <a href="admin_login.html"><b>Puchihagu</b>login</a>
         </div>
+
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">メールアドレスとパスワードを<br>入力してください</p>
+                <p class="login-box-msg">ログイン情報を入力してください。</p>
+                <div class="login-error">
+                <?= $error_message['email'];?>
+                </div>
                 <?= form_open('login/index'); ?>
                     <div class="input-group mb-3">
                         <input type="email" name="email" value="" class="form-control" placeholder="Email">
@@ -33,6 +39,9 @@
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
+                    </div>
+                    <div class="login-error">
+                    <?= $error_message['password'];?>
                     </div>
                     <div class="input-group mb-3">
                         <input type="password" name="password" value="" class="form-control" placeholder="Password">
@@ -60,7 +69,7 @@
                 </form>
 
                 <div class="social-auth-links text-center mb-3">
-                    <p>- OR （以下余裕があれば実装します）-</p>
+                    <p>- OR -</p>
 
                     <a href="#" class="btn btn-block btn-danger">
                         <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
