@@ -12,7 +12,7 @@ class Register extends CI_Controller
     }
 
     public function index()
-    {    
+    {    // ログインチェックを後でここに書く
         $this->load->view('register_view');
     }
 
