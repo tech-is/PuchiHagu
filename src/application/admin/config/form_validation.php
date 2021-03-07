@@ -23,33 +23,22 @@ $config = array(
         array(
             'field' => 'email',
             'label' => 'メールアドレス',
-            'rules' => 'required',
+            'rules' => 'required|valid_email',
             'errors' => array(
-                'required' => '*%sの入力は必須です。'
+                'required' => '*%sの入力は必須です。',
+                'valid_email'=>'*%sの入力形式が正しくありません。'
                 //arrayの形式にしているのは複数エラーメッセージを出すこともできるため
             )
         ),
         array(
             'field' => 'password',
             'label' => 'パスワード',
-            'rules' => array(
-                'required',
-                array(
-                    'isPassword',
-                    function ($password) {
-                        if ($password === '') {
-                            return TRUE;
-                        }
-
-                        if (preg_match('/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/i', $password)) {
-                            return TRUE;
-                        }
-                        return FALSE;
-                    }
-                )
-            ),
+            'rules' => 'required|min_length[8]|max_length[12]|regex_match[/^[\w\-]+$/]',
             'errors' => array(
-                'required' => '*%sの入力は必須です。'
+                'required' => '*%sの入力は必須です。',
+                'min_length' => '*%sは8文字以上にして下さい。',
+                'max_length' => '*%sは12文字以下にして下さい。',
+                'regex_match' => '*%sに使用出来るのは半角英数字、ハイフン、アンダースコアです。',
             )
         ),
         array(
@@ -57,8 +46,8 @@ $config = array(
             'label' => 'パスワード(再入力)',
             'rules' => 'matches[password]',
             'errors' => array(
-                'required' => '*%sが一致しません。'
-            )
+                'matches' => '*%sが一致しません。'
+            ),
         ),
     )
 
