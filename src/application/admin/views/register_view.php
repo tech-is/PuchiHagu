@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- adminLTE style -->
     <link href="../../dist/css/adminlte.min.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="../../css/admin.css">
 
 </head>
 
@@ -119,23 +119,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="nav-item menu-open">
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-cog"></i>
-                            <p>
-                                管理者設定
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
+                                <p>
+                                    管理者設定
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                <a href="<?= base_url('admin.php/register/index'); ?>" class="nav-link active">
-                                    <i class="nav-icon far far fa-check-square"></i>
-                                    <p>新規登録</p>
-                                </a>
+                                    <a href="<?= base_url('admin.php/register/index'); ?>" class="nav-link active">
+                                        <i class="nav-icon far far fa-check-square"></i>
+                                        <p>新規登録</p>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                <a href="<?= base_url('admin.php/caretaker/index'); ?>" class="nav-link">
-                                    <i class="nav-icon far far fa-check-square"></i>
-                                    <p>登録情報一覧</p>
-                                </a>
+                                    <a href="<?= base_url('admin.php/caretaker/index'); ?>" class="nav-link">
+                                        <i class="nav-icon far far fa-check-square"></i>
+                                        <p>登録情報一覧</p>
+                                    </a>
                                 </li>
                             </ul>
                         </li>
@@ -171,43 +171,47 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="card">
                         <div class="card-body register-card-body">
                             <?= form_open('register/index'); ?>
-                                    <p class="register-error">
-                                        <!-- <?= $register_error; ?> -->
-                                    </p>
-                                    <div class="input-group mb-3">
-                                        <input type="email" name="email" class="form-control" placeholder="email">
-                                            <div class="input-group-append">
-                                                <div class="input-group-text">
-                                                    <span class="fas fa-envelope"></span>
-                                                </div>
-                                            </div>
+                            <p class="register-error">
+                                <?php
+                                //var_dump($error_message);
+                                ?>
+                            </p>
+                            <div class="input-group">
+                                <input type="email" name="email" class="form-control" placeholder="email" value="<?php if(!empty($post_data["email"])){echo $post_data["email"];} ?>">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-envelope"></span>
                                     </div>
-                                    <div class="input-group mb-3">
-                                        <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
-                                            <div class="input-group-append">
-                                                <div class="input-group-text">
-                                                    <span class="fas fa-lock"></span>
-                                                </div>
-                                            </div>
+                                </div>
+                            </div>
+                            <?php if (!empty($error_message["email"])): ?>
+                                <small class="register-error"><?= $error_message["email"]; ?></small>
+                            <?php endif; ?>
+                            <div class="input-group mt-3">
+                                <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
                                     </div>
-                                    <div class="input-group mb-3">
-                                        <input type="password" name="pass_conf" class="form-control" placeholder="Retype password" autocomplete="off">
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">
-                                                <span class="fas fa-lock"></span>
-                                            </div>
-                                        </div>
+                                </div>
+                            </div>
+                            <?php if (!empty($error_message["password"])): ?>
+                                <small class="register-error"><?= $error_message["password"]; ?></small>
+                            <?php endif; ?>
+                            <div class="input-group mt-3">
+                                <input type="password" name="pass_conf" class="form-control" placeholder="Retype password" autocomplete="off">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <!-- <?= validation_errors(); ?> -->
-                                        </div>
-                                        <!-- /.col -->
-                                        <div class="col-4">
-                                            <button type="submit" name="register_submit" value='register' class="btn btn-primary btn-block">登録</button>
-                                        </div>
-                                        <!-- /.col -->
-                                    </div>
+                                </div>
+                            </div>
+                            <?php if (!empty($error_message["pass_conf"])): ?>
+                                <small class="register-error"><?= $error_message["pass_conf"]; ?></small>
+                            <?php endif; ?>
+                            <div class="mt-3 text-right">
+                                <button type="submit" name="register_submit" value='register' class="btn btn-primary">登録</button>
+                            </div>
                             </form>
                         </div>
                     </div>
@@ -229,7 +233,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
+            <!-- Control sidebar content goes here -->
         </aside>
         <!-- /.control-sidebar -->
     </div>
@@ -257,4 +261,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
 </body>
+
 </html>

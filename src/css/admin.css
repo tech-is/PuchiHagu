@@ -5,6 +5,13 @@
     color: rgb(238, 23, 23);
 }
 
+.register-error,
+.login-error {
+    text-align: center;
+    color: tomato;
+    /* color: rgb(238, 23, 23); */
+}
+
 
 /* .login-page {
     height: 70vh;

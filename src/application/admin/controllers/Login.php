@@ -14,6 +14,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{   
+        $data= null;
         $login ='';
         //設定ファイルから設定項目を読み取る。$autoload['config']に設定する
         // configファイル(form_validation.php)からloginの配列を取得
