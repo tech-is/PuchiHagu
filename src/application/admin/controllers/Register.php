@@ -34,6 +34,16 @@ class Register extends CI_Controller
         $this->load->view('register_view',$data);
     }
 
+    public function registration_process()
+    {    
+        $data = $this->input->post();
+        $result = $this->register_model->register($data);
+        if($result){
+            return $result = '登録が完了しました。';
+        }else{
+            return $result = '登録に失敗しました。';
+        }
+    }
 
 }
 
