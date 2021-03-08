@@ -44,8 +44,9 @@ $config = array(
         array(
             'field' => 'pass_conf',
             'label' => 'パスワード(再入力)',
-            'rules' => 'matches[password]',
+            'rules' => 'required|matches[password]',
             'errors' => array(
+                'required' => '*%sの入力は必須です。',
                 'matches' => '*%sが一致しません。'
             ),
         ),
