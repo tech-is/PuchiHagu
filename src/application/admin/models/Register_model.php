@@ -7,7 +7,7 @@ class Register_model extends CI_Model{
         $email = $data['email'];
         //ハッシュ化して暗号化して入れる
         $password = password_hash($data['password'],PASSWORD_DEFAULT);
-        //失敗値はFALSE,成功したらTRUE
+        //失敗値はFALSE,成功したら1
         $result = $this->db->insert('admins',array(
             'admins_mail' =>$email,
             'admins_pass' =>$password

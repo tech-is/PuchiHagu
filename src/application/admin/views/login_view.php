@@ -28,9 +28,11 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">ログイン情報を入力してください。</p>
-                <div class="login-error">
-                <?= $error_message['email'];?>
-                </div>
+
+                <?php if (!empty($error_message['email'])): ?>
+                                <small class="login-error"><?= $error_message['email']; ?></small>
+                <?php endif; ?>
+
                 <?= form_open('login/index'); ?>
                     <div class="input-group mb-3">
                         <input type="email" name="email" value="" class="form-control" placeholder="Email">
@@ -40,9 +42,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="login-error">
-                    <?= $error_message['password'];?>
-                    </div>
+                    <?php if (!empty($error_message['password'])): ?>
+                                <small class="login-error"><?= $error_message['password']; ?></small>
+                　　<?php endif; ?>
+
                     <div class="input-group mb-3">
                         <input type="password" name="password" value="" class="form-control" placeholder="Password">
                         <div class="input-group-append">

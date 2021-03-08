@@ -24,7 +24,7 @@ class Login extends CI_Controller {
         // フォームが送信された且つ、バリデーションがtrueだった場合
         //falseだった場合viewのエラー表示
         if($this->input->post('login_submit')&& $this->form_validation->run()){
-        // $login =$this->login_check();
+        $login =$this->login_check();
     }else{
         //エラーメッセージを配列で返す
         $data['error_message']= $this->form_validation->error_array();
