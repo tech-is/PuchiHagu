@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="admin_login.html"><b>Puchihagu</b>login</a>
+            <h2>Puchihagu</h2><h5>管理者ログイン</h5>
         </div>
 
         <!-- /.login-logo -->
@@ -78,13 +78,13 @@
                     <p>- OR -</p>
 
                     <a href="#" class="btn btn-block btn-danger">
-                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                        <i class="fab fa-google-plus mr-2"></i> (未実装)Sign in using Google+
                     </a>
                 </div>
                 <!-- /.social-auth-links -->
 
                 <p class="mb-1">
-                    <a href="forgot-password.html">パスワードを忘れた場合</a>
+                    <a href="forgot-password.html">(未実装)パスワードを忘れた場合</a>
                 </p>
                 <p class="mb-0">
                     <a href="../register/index" class="text-center">新規ユーザー登録</a>

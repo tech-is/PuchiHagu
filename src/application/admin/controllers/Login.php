@@ -50,7 +50,7 @@ class Login extends CI_Controller {
             //管理者画面に飛ばす
             redirect('administrator');
         }else{
-            $_SESSION['login_error_message'] ='ログインに失敗しました。';
+            $_SESSION['login_error_message'] ='ログイン失敗。ログイン情報をお確かめください';
             return redirect("/login");
         }
 
