@@ -23,10 +23,11 @@ $config = array(
         array(
             'field' => 'email',
             'label' => 'メールアドレス',
-            'rules' => 'required|valid_email',
+            'rules' => 'required|valid_email|is_unique[admins.admins_mail]',
             'errors' => array(
                 'required' => '*%sの入力は必須です。',
-                'valid_email'=>'*%sの入力形式が正しくありません。'
+                'valid_email'=>'*%sの入力形式が正しくありません。',
+                'is_unique'=>'*この%sは既にご登録されております。',
                 //arrayの形式にしているのは複数エラーメッセージを出すこともできるため
             )
         ),
