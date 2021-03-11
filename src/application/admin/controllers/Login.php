@@ -15,6 +15,10 @@ class Login extends CI_Controller {
 	public function index()
 	{   
         $data= null;
+        if (!empty($_SESSION['login_error_message'])) {
+            $data["login_error_message"] = $_SESSION['login_error_message'];
+            unset($_SESSION['login_error_message']);
+        }
         $login ='';
         //設定ファイルから設定項目を読み取る。$autoload['config']に設定する
         // configファイル(form_validation.php)からloginの配列を取得
@@ -25,10 +29,10 @@ class Login extends CI_Controller {
         //falseだった場合viewのエラー表示
         if($this->input->post('login_submit')&& $this->form_validation->run()){
         $login =$this->login_check();
-    }else{
-        //エラーメッセージを配列で返す
-        $data['error_message']= $this->form_validation->error_array();
-    }
+        }else{
+            //エラーメッセージを配列で返す
+            $data['error_message']= $this->form_validation->error_array();
+        }
     
 		$this->load->view('login_view',$data);
 
@@ -38,6 +42,17 @@ class Login extends CI_Controller {
     {   
         $data = $this->input->post();
         $result = $this->login_model->login_check($data);
+        // var_dump($result);
+
+        if($result){
+            //セッションを持たせる
+            $_SESSION["id"] = $result["admins_id"];
+            //管理者画面に飛ばす
+            redirect('administrator');
+        }else{
+            $_SESSION['login_error_message'] ='ログインに失敗しました。';
+            return redirect("/login");
+        }
 
     }
 }

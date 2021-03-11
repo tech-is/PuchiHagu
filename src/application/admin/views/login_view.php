@@ -28,7 +28,10 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">ログイン情報を入力してください。</p>
-
+                <?php if (!empty($login_error_message)): ?>
+                                <small class="login-error"><?= $login_error_message; ?></small>
+                <?php endif; ?>
+            
                 <?php if (!empty($error_message['email'])): ?>
                                 <small class="login-error"><?= $error_message['email']; ?></small>
                 <?php endif; ?>
