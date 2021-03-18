@@ -4,10 +4,9 @@ $config = array(
         array(
             'field' => 'email',
             'label' => 'メールアドレス',
-            'rules' => 'required|trim|xss_clean',
+            'rules' => 'required|trim',
             'errors' => array(
                 'required' => '*%sの入力は必須です。',
-                'xss_clean' => '*%sの入力形式が正しくありません。'
                 //arrayの形式にしているのは複数エラーメッセージを出すこともできるため
             )
         ),
