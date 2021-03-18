@@ -1,6 +1,5 @@
 <?php 
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Register extends CI_Controller
 {
     public function __construct()
@@ -15,7 +14,6 @@ class Register extends CI_Controller
     public function index()
     {    
         $data = null;
-
         //設定ファイルから設定項目を読み取る。$autoload['config']に設定する
         // configファイル(form_validation.php)からloginの配列を取得
         $rules = $this->config->item("register");
@@ -46,10 +44,7 @@ class Register extends CI_Controller
         }else{
             return $result = '登録に失敗しました。';
         }
-  
     }
-
 }
-
 
 ?>
