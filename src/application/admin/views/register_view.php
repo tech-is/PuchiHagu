@@ -4,12 +4,10 @@ This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="ja">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ぷちはぐ管理者画面</title>
-
     <!-- for responsive -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- bootstrap -->
@@ -27,9 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- adminLTE style -->
     <link href="../../dist/css/adminlte.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../../css/admin.css">
-
 </head>
-
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- 上部ナビゲーション -->
@@ -46,7 +42,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
-
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
@@ -145,7 +140,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <!-- /.sidebar -->
         </aside>
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -171,8 +165,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="card">
                         <div class="card-body register-card-body">
                             <?= form_open('register/index'); ?>
-                            <?php if (!empty($register_error)): ?>
-                                <small class="register-error"><?= $register_error; ?></small>
+                            <?php if (!empty($register_message)): ?>
+                                <small class="register-error"><?= $register_message; ?></small>
                             <?php endif; ?>
                             <div class="input-group">
                                 <input type="email" name="email" class="form-control" placeholder="email" value="<?php if(!empty($post_data["email"])){echo $post_data["email"];} ?>">

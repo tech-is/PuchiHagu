@@ -32,6 +32,7 @@ class Login extends CI_Controller {
         }else{
             //エラーメッセージを配列で返す
             $data['error_message']= $this->form_validation->error_array();
+            $data["post_data"] = $this->input->post();
         }
     
 		$this->load->view('login_view',$data);
