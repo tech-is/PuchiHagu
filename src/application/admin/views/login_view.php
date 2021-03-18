@@ -38,7 +38,7 @@
 
                 <?= form_open('login/index'); ?>
                     <div class="input-group mb-3">
-                        <input type="email" name="email" value="" class="form-control" placeholder="Email">
+                        <input type="email" name="email" value="<?php if(!empty($post_data["email"])){echo $post_data["email"];} ?>" class="form-control" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -68,7 +68,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" name="login_submit"  value="login" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" name="login_submit"  value="login" class="btn btn-primary btn-block">Login</button>
                         </div>
                         <!-- /.col -->
                     </div>

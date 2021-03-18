@@ -165,8 +165,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="card">
                         <div class="card-body register-card-body">
                             <?= form_open('register/index'); ?>
-                            <?php if (!empty($register_error)): ?>
-                                <small class="register-error"><?= $register_error; ?></small>
+                            <?php if (!empty($register_message)): ?>
+                                <small class="register-error"><?= $register_message; ?></small>
                             <?php endif; ?>
                             <div class="input-group">
                                 <input type="email" name="email" class="form-control" placeholder="email" value="<?php if(!empty($post_data["email"])){echo $post_data["email"];} ?>">

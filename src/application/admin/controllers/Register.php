@@ -22,7 +22,7 @@ class Register extends CI_Controller
         // フォームが送信された且つ、バリデーションがtrueだった場合
         //falseだった場合viewへエラー表示
         if($this->input->post('register_submit')&& $this->form_validation->run()){
-        $data['register_error'] =$this->registration_process();
+        $data['register_message'] =$this->registration_process();
         }else{
             //inputされたデータを配列に入れてviewに渡して再入力の手間をなくす
             $data["post_data"] = $this->input->post();
