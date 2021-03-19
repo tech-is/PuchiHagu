@@ -61,8 +61,8 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">Remember Me
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember">ログイン情報を保存する
                                 </label>
                             </div>
                         </div>
