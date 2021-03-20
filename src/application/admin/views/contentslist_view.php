@@ -180,7 +180,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title"><a href="admin_print_add.html">新規登録</a></h3>
+                                    <h3 class="card-title"><a href="<?= base_url('admin.php/Contentslist/add'); ?>" class="nav-link">新規登録</a></h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">

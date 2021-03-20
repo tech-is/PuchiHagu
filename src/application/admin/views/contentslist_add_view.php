@@ -163,93 +163,102 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>コンテンツ一覧</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                                <li class="breadcrumb-item active">コンテンツ一覧</li>
-                            </ol>
-
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>プリント登録</h1>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">ホーム</a></li>
+                                    <li class="breadcrumb-item active">プリント登録</li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- /.container-fluid -->
-            </section>
+                    <!-- /.container-fluid -->
+                </section>
 
-           <!-- Main content -->
-           <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-
-                            <div class="card">
+        <!-- Main content -->
+        <section class="content">
+            <?= form_open('contentslist/add'); ?>
+                    <div class="container-fluid">
+                        <!-- SELECT2 EXAMPLE -->
+                            <div class="card card-default">
                                 <div class="card-header">
-                                    <h3 class="card-title"><a href="admin_print_add.html">新規登録</a></h3>
+                                    <h3 class="card-title">新規登録内容</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>分類</th>
-                                                <th>タイトル</th>
-                                                <th>説明文</th>
-                                                <th>画像ファイル名</th>
-                                                <th>更新日時</th>
-                                                <th>累計ダウンロード回数</th>
-                                                <th></th>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>分類</label><span class=" badge badge-danger ">必須</span>
+                                            <select name="category" class="form-control select2bs4" style="width: 100%;">
+                                                        <option selected="selected"></option>
+                                                        <option>ひらがな</option>
+                                                        <option>すうじ</option>
+                                                        <option>うんぴつ</option>
+                                                        <option>てんつなぎ</option>
+                                                        <option>プログラミング</option>
+                                                </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>タイトル</label><span class=" badge badge-danger ">必須</span>
+                                            <div class="col-xs-2">
+                                                <input type="text" id="contentstitle" name="contentstitle" class="form-control " placeholder="タイトルを入力してください ">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>説明文</label>
+                                            <div class="col-xs-2">
+                                                <input type="text" id="contentsmemo" name="contentsmemo" class="form-control " placeholder="説明文を入力してください">
+                                            </div>
+                                        </div>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>ひらがな</td>
-                                                <td>あ</td>
-                                                <td>あ</td>
-                                                <td>hiragana-a.pdf</td>
-                                                <td>2020-01-01 00:00:00</td>
-                                                <th>100</th>
-                                                <td>
-                                                    <a class="btn btn-outline-primary btn-sm" href="admin_print_preview.html">プレビュー</a>
-                                                    <a class="btn btn-outline-primary btn-sm" href="admin_print_edit.html">編集</a>
-                                                    <a class="btn btn btn-outline-danger btn-sm" href="admin_print_delete.html">削除</a>
-                                                </td>
-                                            </tr>
- 
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>分類</th>
-                                                <th>タイトル</th>
-                                                <th>説明文</th>
-                                                <th>画像ファイル名</th>
-                                                <th>更新日時</th>
-                                                <th>累計ダウンロード回数</th>
-                                                <th></th>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">ファイル※選択されたファイル名が登録されます</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="inputfile" name="inputfile">
+                                                    <label class="custom-file-label" for="exampleInputFile">ファイルを選択してください</label>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <button type="button" name="inputreset" class="btn btn-outline-secondary reset">取消</button>
+                                                </div>
 
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
-                                <!-- /.card-body -->
+
                             </div>
-                            <!-- /.card -->
-                        </div>
-                        <!-- /.col -->
                     </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
+                    <!-- /.container-fluid -->
+                    <div class="card-footer">
+                        <form action="" method="post">
+                            <p>
+                                <input name="add" class="btn btn-primary" type="submit" value="登録">
+                                <input name="cancel" class="btn btn-secondary" type="reset" value="キャンセル">
+                            </p>
+
+                    </div>
+            </form>
+        </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
 
         <footer class="main-footer">
             <!-- To the right -->
@@ -290,31 +299,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="../../dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "lengthChange": true,
-                "searching": true,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-                "language ": {
-                    url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json "
-                },
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
-        });
-    </script>
+            $('.custom-file-input').on('change', handleFileSelect);
+
+            function handleFileSelect(evt) {
+                $('#preview').remove(); // 繰り返し実行時の処理
+                $(this).parents('.input-group').after('<div id="preview"></div>');
+
+                var files = evt.target.files;
+
+                for (var i = 0, f; f = files[i]; i++) {
+
+                    var reader = new FileReader();
+
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+                            if (theFile.type.match('image.*')) {
+                                var $html = ['<div class="d-inline-block mr-1 mt-1"><img class="img-thumbnail" src="', e.target.result, '" title="', escape(theFile.name), '" style="height:100px;" /><div class="small text-muted text-center">', escape(theFile.name), '</div></div>'].join(''); // 画像では画像のプレビューとファイル名の表示
+                            } else {
+                                var $html = ['<div class="d-inline-block mr-1"><span class="small">', escape(theFile.name), '</span></div>'].join(''); //画像以外はファイル名のみの表示
+                            }
+
+                            $('#preview').append($html);
+                        };
+                    })(f);
+
+                    reader.readAsDataURL(f);
+                }
+                $(this).next('.custom-file-label').html(+files.length + '個のファイルを選択しました');
+            }
+
+            //ファイルの取消
+            $('.reset').click(function() {
+                $(this).parent().prev().children('.custom-file-label').html('ファイル選択...');
+                $('#preview').remove();
+                $('.custom-file-input').val('');
+            })
+        </script>
+
 </body>
 
 </html>

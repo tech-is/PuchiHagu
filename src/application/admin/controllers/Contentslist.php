@@ -19,6 +19,9 @@ class Contentslist extends CI_Controller {
 
     public function add()
     {
-        
+        if(isset($_POST)){
+            var_dump($_POST);
+        }
+        $this->load->view('contentslist_add_view');
     }
 }
