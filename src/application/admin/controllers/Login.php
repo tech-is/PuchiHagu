@@ -43,11 +43,23 @@ class Login extends CI_Controller {
     {   
         $data = $this->input->post();
         $result = $this->login_model->login_check($data);
-        // var_dump($result);
 
         if($result){
-            //セッションを持たせる
+            //ログインセッションを持たせる
             $_SESSION["id"] = $result["admins_id"];
+            //ログイン情報の保存
+            if(isset($data["remember"])){
+                $password=$result["admins_pass"];
+                $email=$result["admins_mail"];
+                $session = $password.$email;
+                $sessionid = hash('sha256',$session);
+
+                $_SESSION["email"] = $_POST["email"];
+                $_SESSION["password"] = $_POST["password"];
+
+                setcookie("sessionid1", $_POST["email"], time() + 3600);
+                setcookie("sessionid2", $_POST["password"], time() + 3600);
+            }
             //管理者画面に飛ばす
             return redirect("/administrator");
         }else{
