@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ぷちはぐ管理者画面</title>
+    <title>プリント追加</title>
 
     <!-- for responsive -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -27,7 +27,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- adminLTE style -->
     <link href="../../dist/css/adminlte.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../../css/admin.css">
-
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+ 
+    <style>
+        .custom-file {
+            max-width: 20rem;
+            overflow: hidden;
+        }
+        
+        .custom-file-label {
+            white-space: nowrap;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -62,8 +76,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
 
-                <!-- Notifications Dropdown Menu -->
-                <li class="nav-item">
+               <!-- Notifications Dropdown Menu -->
+               <li class="nav-item">
                     <div class="dropdown-menu-right">
                         <!-- <?php
                         print_r ($this->session->all_userdata());
@@ -97,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                <a href="<?= base_url('admin.php/Contentslist/index'); ?>" class="nav-link">
+                                    <a href="admin_contents.html" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>コンテンツ管理</p>
                                     </a>
@@ -149,38 +163,102 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>HOME</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                                <li class="breadcrumb-item active">ホーム</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.container-fluid -->
-            </section>
-            <!-- Main content -->
-            <section class="content">
-                <div class="register-box">
-                    <div class="card">
-                        <div class="card-body register-card-body">
-                           <p>準備中</p>
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>プリント登録</h1>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">ホーム</a></li>
+                                    <li class="breadcrumb-item active">プリント登録</li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
-                    <!-- /.card -->
-                </div>
-                <!-- /.register-box -->
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
+                    <!-- /.container-fluid -->
+                </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <?= form_open('contentslist/add'); ?>
+                    <div class="container-fluid">
+                        <!-- SELECT2 EXAMPLE -->
+                            <div class="card card-default">
+                                <div class="card-header">
+                                    <h3 class="card-title">新規登録内容</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>分類</label><span class=" badge badge-danger ">必須</span>
+                                            <select name="category" class="form-control select2bs4" style="width: 100%;">
+                                                        <option selected="selected"></option>
+                                                        <option>ひらがな</option>
+                                                        <option>すうじ</option>
+                                                        <option>うんぴつ</option>
+                                                        <option>てんつなぎ</option>
+                                                        <option>プログラミング</option>
+                                                </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>タイトル</label><span class=" badge badge-danger ">必須</span>
+                                            <div class="col-xs-2">
+                                                <input type="text" id="contentstitle" name="contentstitle" class="form-control " placeholder="タイトルを入力してください ">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>説明文</label>
+                                            <div class="col-xs-2">
+                                                <input type="text" id="contentsmemo" name="contentsmemo" class="form-control " placeholder="説明文を入力してください">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">ファイル※選択されたファイル名が登録されます</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="inputfile" name="inputfile">
+                                                    <label class="custom-file-label" for="exampleInputFile">ファイルを選択してください</label>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <button type="button" name="inputreset" class="btn btn-outline-secondary reset">取消</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                    <div class="card-footer">
+                        <form action="" method="post">
+                            <p>
+                                <input name="add" class="btn btn-primary" type="submit" value="登録">
+                                <input name="cancel" class="btn btn-secondary" type="reset" value="キャンセル">
+                            </p>
+
+                    </div>
+            </form>
+        </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
 
         <footer class="main-footer">
             <!-- To the right -->
@@ -219,6 +297,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <!-- Page specific script -->
+    <script>
+            $('.custom-file-input').on('change', handleFileSelect);
+
+            function handleFileSelect(evt) {
+                $('#preview').remove(); // 繰り返し実行時の処理
+                $(this).parents('.input-group').after('<div id="preview"></div>');
+
+                var files = evt.target.files;
+
+                for (var i = 0, f; f = files[i]; i++) {
+
+                    var reader = new FileReader();
+
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+                            if (theFile.type.match('image.*')) {
+                                var $html = ['<div class="d-inline-block mr-1 mt-1"><img class="img-thumbnail" src="', e.target.result, '" title="', escape(theFile.name), '" style="height:100px;" /><div class="small text-muted text-center">', escape(theFile.name), '</div></div>'].join(''); // 画像では画像のプレビューとファイル名の表示
+                            } else {
+                                var $html = ['<div class="d-inline-block mr-1"><span class="small">', escape(theFile.name), '</span></div>'].join(''); //画像以外はファイル名のみの表示
+                            }
+
+                            $('#preview').append($html);
+                        };
+                    })(f);
+
+                    reader.readAsDataURL(f);
+                }
+                $(this).next('.custom-file-label').html(+files.length + '個のファイルを選択しました');
+            }
+
+            //ファイルの取消
+            $('.reset').click(function() {
+                $(this).parent().prev().children('.custom-file-label').html('ファイル選択...');
+                $('#preview').remove();
+                $('.custom-file-input').val('');
+            })
+        </script>
+
 </body>
 
 </html>

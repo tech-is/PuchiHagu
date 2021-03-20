@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ぷちはぐ管理者画面</title>
+    <title>コンテンツ管理者画面</title>
 
     <!-- for responsive -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -27,6 +27,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- adminLTE style -->
     <link href="../../dist/css/adminlte.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="../../css/admin.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 </head>
 
@@ -62,8 +66,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
 
-                <!-- Notifications Dropdown Menu -->
-                <li class="nav-item">
+               <!-- Notifications Dropdown Menu -->
+               <li class="nav-item">
                     <div class="dropdown-menu-right">
                         <!-- <?php
                         print_r ($this->session->all_userdata());
@@ -97,7 +101,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                <a href="<?= base_url('admin.php/Contentslist/index'); ?>" class="nav-link">
+                                    <a href="admin_contents.html" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>コンテンツ管理</p>
                                     </a>
@@ -154,29 +158,84 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>HOME</h1>
+                            <h1>コンテンツ一覧</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                                <li class="breadcrumb-item active">ホーム</li>
+                                <li class="breadcrumb-item active">コンテンツ一覧</li>
                             </ol>
+
                         </div>
                     </div>
                 </div>
                 <!-- /.container-fluid -->
             </section>
-            <!-- Main content -->
-            <section class="content">
-                <div class="register-box">
-                    <div class="card">
-                        <div class="card-body register-card-body">
-                           <p>準備中</p>
+
+           <!-- Main content -->
+           <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title"><a href="<?= base_url('admin.php/Contentslist/add'); ?>" class="nav-link">新規登録</a></h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>分類</th>
+                                                <th>タイトル</th>
+                                                <th>説明文</th>
+                                                <th>画像ファイル名</th>
+                                                <th>更新日時</th>
+                                                <th>累計ダウンロード回数</th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>ひらがな</td>
+                                                <td>あ</td>
+                                                <td>あ</td>
+                                                <td>hiragana-a.pdf</td>
+                                                <td>2020-01-01 00:00:00</td>
+                                                <th>100</th>
+                                                <td>
+                                                    <a class="btn btn-outline-primary btn-sm" href="admin_print_preview.html">プレビュー</a>
+                                                    <a class="btn btn-outline-primary btn-sm" href="admin_print_edit.html">編集</a>
+                                                    <a class="btn btn btn-outline-danger btn-sm" href="admin_print_delete.html">削除</a>
+                                                </td>
+                                            </tr>
+ 
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>分類</th>
+                                                <th>タイトル</th>
+                                                <th>説明文</th>
+                                                <th>画像ファイル名</th>
+                                                <th>更新日時</th>
+                                                <th>累計ダウンロード回数</th>
+                                                <th></th>
+
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
                         </div>
+                        <!-- /.col -->
                     </div>
-                    <!-- /.card -->
+                    <!-- /.row -->
                 </div>
-                <!-- /.register-box -->
+                <!-- /.container-fluid -->
             </section>
             <!-- /.content -->
         </div>
@@ -219,6 +278,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="../../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": true,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                "language ": {
+                    url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json "
+                },
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
 </body>
 
 </html>
