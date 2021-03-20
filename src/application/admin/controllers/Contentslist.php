@@ -9,10 +9,16 @@ class Contentslist extends CI_Controller {
         if (empty($_SESSION["id"])) {
             return redirect("/login");
         }
+        $this->load->model('contentslist_model');
         date_default_timezone_set('Asia/Tokyo');
     }
 	public function index()
 	{   
         $this->load->view('contentslist_view');
+    }
+
+    public function add()
+    {
+        
     }
 }

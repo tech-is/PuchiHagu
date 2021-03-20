@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>コンテンツ管理者画面</title>
+    <title>プリント追加</title>
 
     <!-- for responsive -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -31,7 +31,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-
+ 
+    <style>
+        .custom-file {
+            max-width: 20rem;
+            overflow: hidden;
+        }
+        
+        .custom-file-label {
+            white-space: nowrap;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
