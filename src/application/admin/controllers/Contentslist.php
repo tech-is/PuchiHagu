@@ -13,6 +13,6 @@ class Contentslist extends CI_Controller {
     }
 	public function index()
 	{   
-        $this->load->view('administrator_view');
+        $this->load->view('contentslist_view');
     }
 }

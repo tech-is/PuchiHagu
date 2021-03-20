@@ -97,7 +97,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="admin_contents.html" class="nav-link">
+                                <a href="<?= base_url('admin.php/Contentslist/index'); ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>コンテンツ管理</p>
                                     </a>
