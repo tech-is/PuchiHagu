@@ -1,11 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-//コントローラーの名前をlogin
+//コントローラーの名前
 class Administrator extends CI_Controller {
 	public function __construct()
     {   
         parent::__construct();
+        //ログインチェック
         if (empty($_SESSION["id"])) {
             return redirect("/login");
         }
@@ -15,4 +16,11 @@ class Administrator extends CI_Controller {
 	{   
         $this->load->view('administrator_view');
     }
+
+    public function logout()
+    { 
+        session_destroy();
+        redirect("/login/index");
+    }
+
 }
