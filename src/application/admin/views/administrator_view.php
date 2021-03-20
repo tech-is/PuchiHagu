@@ -86,8 +86,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     機能一覧
@@ -116,8 +116,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
 
-                        <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-cog"></i>
                                 <p>
                                     管理者設定
@@ -126,7 +126,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?= base_url('admin.php/register/index'); ?>" class="nav-link active">
+                                    <a href="<?= base_url('admin.php/register/index'); ?>" class="nav-link">
                                         <i class="nav-icon far far fa-check-square"></i>
                                         <p>新規登録</p>
                                     </a>
@@ -153,12 +153,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>管理者新規登録</h1>
+                            <h1>HOME</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                                <li class="breadcrumb-item active">管理者新規登録</li>
+                                <li class="breadcrumb-item active">ホーム</li>
                             </ol>
                         </div>
                     </div>
@@ -170,47 +170,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="register-box">
                     <div class="card">
                         <div class="card-body register-card-body">
-                            <?= form_open('register/index'); ?>
-                            <?php if (!empty($register_error)): ?>
-                                <small class="register-error"><?= $register_error; ?></small>
-                            <?php endif; ?>
-                            <div class="input-group">
-                                <input type="email" name="email" class="form-control" placeholder="email" value="<?php if(!empty($post_data["email"])){echo $post_data["email"];} ?>">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <span class="fas fa-envelope"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php if (!empty($error_message["email"])): ?>
-                                <small class="register-error"><?= $error_message["email"]; ?></small>
-                            <?php endif; ?>
-                            <div class="input-group mt-3">
-                                <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <span class="fas fa-lock"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php if (!empty($error_message["password"])): ?>
-                                <small class="register-error"><?= $error_message["password"]; ?></small>
-                            <?php endif; ?>
-                            <div class="input-group mt-3">
-                                <input type="password" name="pass_conf" class="form-control" placeholder="Retype password" autocomplete="off">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <span class="fas fa-lock"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php if (!empty($error_message["pass_conf"])): ?>
-                                <small class="register-error"><?= $error_message["pass_conf"]; ?></small>
-                            <?php endif; ?>
-                            <div class="mt-3 text-right">
-                                <button type="submit" name="register_submit" value='register' class="btn btn-primary">登録</button>
-                            </div>
-                            </form>
+                           <p>準備中</p>
                         </div>
                     </div>
                     <!-- /.card -->
