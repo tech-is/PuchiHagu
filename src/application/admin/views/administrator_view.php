@@ -65,9 +65,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item">
                     <div class="dropdown-menu-right">
-                        <form action="/logout" method="POST">
-                            <button type="submit" class="btn btn-primary btn-sm">ログアウト</button>
-                        </form>
+                        <!-- <?php
+                        print_r ($this->session->all_userdata());
+                        ?> -->
+                        <a class="btn btn-primary btn-sm" href="<?= base_url('admin.php/Administrator/logout'); ?>" role="button">ログアウト</a>
                     </div>
                 </li>
 

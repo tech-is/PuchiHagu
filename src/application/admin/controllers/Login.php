@@ -51,15 +51,9 @@ class Login extends CI_Controller {
             if(isset($data["remember"])){
                 $password=$result["admins_pass"];
                 $email=$result["admins_mail"];
-                $session = $password.$email;
-                $sessionid = hash('sha256',$session);
-
-                $_SESSION["email"] = $_POST["email"];
-                $_SESSION["password"] = $_POST["password"];
-
-                setcookie("sessionid1", $_POST["email"], time() + 3600);
-                setcookie("sessionid2", $_POST["password"], time() + 3600);
-            }
+                setcookie("sessionid1", $password, time() + 3600);
+                setcookie("sessionid2", $email, time() + 3600);
+            }    
             //管理者画面に飛ばす
             return redirect("/administrator");
         }else{
