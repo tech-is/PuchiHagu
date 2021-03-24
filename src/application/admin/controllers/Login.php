@@ -49,8 +49,10 @@ class Login extends CI_Controller {
             $_SESSION["id"] = $result["admins_id"];
             //ログイン情報の保存
             if(isset($data["remember"])){
-                $password=$result["admins_pass"];
-                $email=$result["admins_mail"];
+                $password=$_POST["password"];
+                $email=$_POST["email"];
+
+                $this->load->helper('cookie');
                 setcookie("sessionid1", $password, time() + 3600);
                 setcookie("sessionid2", $email, time() + 3600);
             }    
