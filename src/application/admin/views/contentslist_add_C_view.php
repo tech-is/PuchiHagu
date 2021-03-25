@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>プリント追加</title>
+    <title>プリント追加(内容確認)</title>
 
     <!-- for responsive -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -173,7 +173,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                                    <li class="breadcrumb-item active">プリント登録</li>
+                                    <li class="breadcrumb-item active">プリント登録(確認)</li>
                                 </ol>
                             </div>
                         </div>
@@ -188,7 +188,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- SELECT2 EXAMPLE -->
                             <div class="card card-default">
                                 <div class="card-header">
-                                    <h3 class="card-title">新規登録内容</h3>
+                                    <h3 class="card-title">下記内容で間違いがなければ登録ボタンをクリックしてください。</h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -203,7 +203,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>分類</label><span class=" badge badge-danger ">必須</span>
-                                            <select name="category" class="form-control select2bs4" style="width: 100%;">
+                                            <select name="category" class="form-control select2bs4" style="width: 100%;"disabled>
                                                         <option selected="selected"></option>
                                                         <option value="1">ひらがな</option>
                                                         <option value="2">すうじ</option>
@@ -215,13 +215,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="form-group">
                                             <label>タイトル</label><span class=" badge badge-danger ">必須</span>
                                             <div class="col-xs-2">
-                                                <input type="text" id="contentstitle" name="contentstitle" class="form-control " placeholder="タイトルを入力してください ">
+                                                <input type="text" id="contentstitle" name="contentstitle" class="form-control " disabled>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label>説明文</label>
                                             <div class="col-xs-2">
-                                                <input type="text" id="contentsmemo" name="contentsmemo" class="form-control " placeholder="説明文を入力してください">
+                                                <input type="text" id="contentsmemo" name="contentsmemo" class="form-control " disabled>
                                             </div>
                                         </div>
 
@@ -229,7 +229,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <label for="exampleInputFile">ファイル※選択されたファイル名が登録されます</label>
                                             <div class="input-group">
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputfile" name="inputfile">
+                                                    <input type="file" class="custom-file-input" id="inputfile" name="inputfile" disabled>
                                                     <label class="custom-file-label" for="exampleInputFile">ファイルを選択してください</label>
                                                 </div>
                                                 <div class="input-group-append">
@@ -248,7 +248,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- /.container-fluid -->
                     <div class="card-footer">
                             <div class="mt-3 text-left">
-                                <button type="submit" name="add_submit" value='add' class="btn btn-primary">確認</button>
+                                <button type="submit" name="add_submit" value='add' class="btn btn-primary">登録</button>
                                 <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">キャンセル</button>
                             </div>
                     </div>

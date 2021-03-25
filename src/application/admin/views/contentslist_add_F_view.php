@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>プリント追加</title>
+    <title>プリント追加登録完了</title>
 
     <!-- for responsive -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -173,7 +173,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                                    <li class="breadcrumb-item active">プリント登録</li>
+                                    <li class="breadcrumb-item active">プリント登録完了</li>
                                 </ol>
                             </div>
                         </div>
@@ -188,7 +188,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- SELECT2 EXAMPLE -->
                             <div class="card card-default">
                                 <div class="card-header">
-                                    <h3 class="card-title">新規登録内容</h3>
+                                    <h3 class="card-title">登録が完了いたしました。</h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -199,57 +199,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </div>
                                 </div>
                                 <!-- /.card-header -->
-                                <div class="card-body">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>分類</label><span class=" badge badge-danger ">必須</span>
-                                            <select name="category" class="form-control select2bs4" style="width: 100%;">
-                                                        <option selected="selected"></option>
-                                                        <option value="1">ひらがな</option>
-                                                        <option value="2">すうじ</option>
-                                                        <option value="3">うんぴつ</option>
-                                                        <option value="4">てんつなぎ</option>
-                                                        <option value="5">プログラミング</option>
-                                                </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>タイトル</label><span class=" badge badge-danger ">必須</span>
-                                            <div class="col-xs-2">
-                                                <input type="text" id="contentstitle" name="contentstitle" class="form-control " placeholder="タイトルを入力してください ">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>説明文</label>
-                                            <div class="col-xs-2">
-                                                <input type="text" id="contentsmemo" name="contentsmemo" class="form-control " placeholder="説明文を入力してください">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">ファイル※選択されたファイル名が登録されます</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputfile" name="inputfile">
-                                                    <label class="custom-file-label" for="exampleInputFile">ファイルを選択してください</label>
-                                                </div>
-                                                <div class="input-group-append">
-                                                    <button type="button" name="inputreset" class="btn btn-outline-secondary reset">取消</button>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
                             </div>
                     </div>
                     <!-- /.container-fluid -->
                     <div class="card-footer">
                             <div class="mt-3 text-left">
-                                <button type="submit" name="add_submit" value='add' class="btn btn-primary">確認</button>
-                                <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">キャンセル</button>
+                                <button type="submit" name="add_submit" value='add' class="btn btn-primary">続けて登録する</button>
+                                <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">コンテンツ一覧ページへ戻る</button>
                             </div>
                     </div>
             </form>
