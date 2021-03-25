@@ -51,6 +51,32 @@ $config = array(
                 'matches' => '*%sが一致しません。'
             ),
         ),
+    ),
+    'contentslist_add' => array(
+        array(
+            'field' => 'category',
+            'label' => 'カテゴリー',
+            'rules' => 'required',
+            'errors' => array(
+                'required' => '*%sの選択は必須です。',
+                //arrayの形式にしているのは複数エラーメッセージを出すこともできるため
+            )
+        ),
+        array(
+            'field' => 'contentstitle',
+            'label' => 'タイトル',
+            'rules' => 'required',
+            'errors' => array(
+                'required' => '*%sの入力は必須です。',
+            )
+        ),
+        array(
+            'field' => 'inputfile',
+            'label' => 'ファイル',
+            'rules' => 'required',
+            'errors' => array(
+                'required' => '*%sの選択は必須です。'
+            ),
+        ),
     )
-
 );

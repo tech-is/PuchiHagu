@@ -205,11 +205,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <label>分類</label><span class=" badge badge-danger ">必須</span>
                                             <select name="category" class="form-control select2bs4" style="width: 100%;">
                                                         <option selected="selected"></option>
-                                                        <option>ひらがな</option>
-                                                        <option>すうじ</option>
-                                                        <option>うんぴつ</option>
-                                                        <option>てんつなぎ</option>
-                                                        <option>プログラミング</option>
+                                                        <option value="1">ひらがな</option>
+                                                        <option value="2">すうじ</option>
+                                                        <option value="3">うんぴつ</option>
+                                                        <option value="4">てんつなぎ</option>
+                                                        <option value="5">プログラミング</option>
                                                 </select>
                                         </div>
                                         <div class="form-group">
@@ -247,12 +247,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     <!-- /.container-fluid -->
                     <div class="card-footer">
-                        <form action="" method="post">
-                            <p>
-                                <input name="add" class="btn btn-primary" type="submit" value="登録">
-                                <input name="cancel" class="btn btn-secondary" type="reset" value="キャンセル">
-                            </p>
-
+                            <div class="mt-3 text-left">
+                                <button type="submit" name="add_submit" value='add' class="btn btn-primary">登録</button>
+                                <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">キャンセル</button>
+                            </div>
                     </div>
             </form>
         </section>
@@ -318,7 +316,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             } else {
                                 var $html = ['<div class="d-inline-block mr-1"><span class="small">', escape(theFile.name), '</span></div>'].join(''); //画像以外はファイル名のみの表示
                             }
-
                             $('#preview').append($html);
                         };
                     })(f);

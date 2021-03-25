@@ -179,6 +179,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-12">
 
                             <div class="card">
+                            <?php if (!empty($add_message)): ?>
+                                <small class="register-error"><?= $add_message; ?></small>
+                            <?php endif; ?>
                                 <div class="card-header">
                                     <h3 class="card-title"><a href="<?= base_url('admin.php/Contentslist/add'); ?>" class="nav-link">新規登録</a></h3>
                                 </div>
