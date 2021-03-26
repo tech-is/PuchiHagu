@@ -225,7 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="form-group">
                                     <label>タイトル</label><span class=" badge badge-danger ">必須</span>
                                     <div class="col-xs-2">
-                                        <input type="text" id="contentstitle" name="contentstitle" class="form-control " placeholder="タイトルを入力してください ">
+                                        <input type="text" id="contentstitle" name="contentstitle" class="form-control " placeholder="タイトルを入力してください " value="<?php if(!empty($post_data["contentstitle"])){echo $post_data["contentstitle"];} ?>">
                                     </div>
                                 </div>
                                 <?php if (!empty($error_message["contentstitle"])) : ?>
