@@ -183,6 +183,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Main content -->
         <section class="content">
+        <?php var_dump($_POST) ?>
             <?= form_open('contentslist/add'); ?>
                     <div class="container-fluid">
                         <!-- SELECT2 EXAMPLE -->
@@ -249,7 +250,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="card-footer">
                             <div class="mt-3 text-left">
                                 <button type="submit" name="add_submit" value='add' class="btn btn-primary">登録</button>
-                                <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">キャンセル</button>
+                                <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">戻る</button>
                             </div>
                     </div>
             </form>

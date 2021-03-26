@@ -25,15 +25,25 @@ class Contentslist extends CI_Controller {
         // フォームが送信された且つ、バリデーションがtrueだった場合
         //falseだった場合viewへエラー表示
         if($this->input->post('add_submit')&& $this->form_validation->run()){
-            $data['add_message'] =$this->add_process();
+            $data["post_data"] = $this->input->post();
+            $this->add_confirmation();
             }else{
                 //inputされたデータを配列に入れてviewに渡して再入力の手間をなくす
                 $data["post_data"] = $this->input->post();
                 //エラーメッセージを配列で返す
                 $data['error_message']= $this->form_validation->error_array();
             }
-        $this->load->view('contentslist_add_view');
+        $this->load->view('contentslist_add_view',$data);
     }
+
+    public function add_confirmation()
+    {
+        $this->load->view('contentslist_add_C_view');
+
+    }
+
+
+    // $data['add_message'] =$this->add_process();
     public function add_process()
     {    
         $data = null;
@@ -48,17 +58,5 @@ class Contentslist extends CI_Controller {
         }
     }
 
-    public function upload()
-    {    
-        $data = null;
-        $result =null;
-
-        $data= $this->input->post();
-        $result = $this->contentslist_model->add($data);
-        if($result){
-            return $result = 'ファイルの登録が完了しました。';
-        }else{
-            return $result = 'ファイルの登録に失敗しました。';
-        }
-    }
+   
 }

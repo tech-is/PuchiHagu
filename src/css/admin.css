@@ -12,6 +12,13 @@
     /* color: rgb(238, 23, 23); */
 }
 
+.add-error {
+    text-align: center;
+    margin-top: 0px;
+    color: tomato;
+    /* color: rgb(238, 23, 23); */
+}
+
 
 /* .login-page {
     height: 70vh;

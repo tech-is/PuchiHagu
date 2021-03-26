@@ -31,15 +31,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
- 
+
     <style>
         .custom-file {
             max-width: 20rem;
             overflow: hidden;
         }
-        
+
         .custom-file-label {
             white-space: nowrap;
+        }
+        .form-group{
+            margin-bottom: 2px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -76,12 +80,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
 
-               <!-- Notifications Dropdown Menu -->
-               <li class="nav-item">
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item">
                     <div class="dropdown-menu-right">
                         <!-- <?php
-                        print_r ($this->session->all_userdata());
-                        ?> -->
+                                print_r($this->session->all_userdata());
+                                ?> -->
                         <a class="btn btn-primary btn-sm" href="<?= base_url('admin.php/Administrator/logout'); ?>" role="button">ログアウト</a>
                     </div>
                 </li>
@@ -163,100 +167,111 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <div class="container-fluid">
-                        <div class="row mb-2">
-                            <div class="col-sm-6">
-                                <h1>プリント登録</h1>
-                            </div>
-                            <div class="col-sm-6">
-                                <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="#">ホーム</a></li>
-                                    <li class="breadcrumb-item active">プリント登録</li>
-                                </ol>
-                            </div>
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>プリント登録</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">ホーム</a></li>
+                                <li class="breadcrumb-item active">プリント登録</li>
+                            </ol>
                         </div>
                     </div>
-                    <!-- /.container-fluid -->
-                </section>
+                </div>
+                <!-- /.container-fluid -->
+            </section>
 
-        <!-- Main content -->
-        <section class="content">
-            <?= form_open('contentslist/add'); ?>
-                    <div class="container-fluid">
-                        <!-- SELECT2 EXAMPLE -->
-                            <div class="card card-default">
-                                <div class="card-header">
-                                    <h3 class="card-title">新規登録内容</h3>
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                            <i class="fas fa-times"></i>
-                                        </button>
+            <!-- Main content -->
+            <section class="content">
+                <?php var_dump($_POST) ?>
+                <?= form_open('contentslist/add'); ?>
+                <div class="container-fluid">
+                    <!-- SELECT2 EXAMPLE -->
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h3 class="card-title">新規登録内容</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>分類</label><span class=" badge badge-danger ">必須</span>
+                                    <select name="category" class="form-control select2bs4" style="width: 100%;">
+                                        <option selected="selected"></option>
+                                        <option value="1">ひらがな</option>
+                                        <option value="2">すうじ</option>
+                                        <option value="3">うんぴつ</option>
+                                        <option value="4">てんつなぎ</option>
+                                        <option value="5">プログラミング</option>
+                                    </select>
+                                </div>
+                                <?php if (!empty($error_message["category"])) : ?>
+                                    <small class="add-error"><?= $error_message["category"]; ?></small>
+                                <?php endif; ?>
+                                <div class="form-group">
+                                    <label>タイトル</label><span class=" badge badge-danger ">必須</span>
+                                    <div class="col-xs-2">
+                                        <input type="text" id="contentstitle" name="contentstitle" class="form-control " placeholder="タイトルを入力してください ">
                                     </div>
                                 </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>分類</label><span class=" badge badge-danger ">必須</span>
-                                            <select name="category" class="form-control select2bs4" style="width: 100%;">
-                                                        <option selected="selected"></option>
-                                                        <option value="1">ひらがな</option>
-                                                        <option value="2">すうじ</option>
-                                                        <option value="3">うんぴつ</option>
-                                                        <option value="4">てんつなぎ</option>
-                                                        <option value="5">プログラミング</option>
-                                                </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>タイトル</label><span class=" badge badge-danger ">必須</span>
-                                            <div class="col-xs-2">
-                                                <input type="text" id="contentstitle" name="contentstitle" class="form-control " placeholder="タイトルを入力してください ">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>説明文</label>
-                                            <div class="col-xs-2">
-                                                <input type="text" id="contentsmemo" name="contentsmemo" class="form-control " placeholder="説明文を入力してください">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">ファイル※選択されたファイル名が登録されます</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputfile" name="inputfile">
-                                                    <label class="custom-file-label" for="exampleInputFile">ファイルを選択してください</label>
-                                                </div>
-                                                <div class="input-group-append">
-                                                    <button type="button" name="inputreset" class="btn btn-outline-secondary reset">取消</button>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
+                                <?php if (!empty($error_message["contentstitle"])) : ?>
+                                    <small class="add-error"><?= $error_message["contentstitle"]; ?></small>
+                                <?php endif; ?>
+                                <div class="form-group">
+                                    <label>説明文</label>
+                                    <div class="col-xs-2">
+                                        <input type="text" id="contentsmemo" name="contentsmemo" class="form-control " placeholder="説明文を入力してください">
                                     </div>
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="exampleInputFile">ファイル※選択されたファイル名が登録されます</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputfile" name="inputfile">
+                                            <label class="custom-file-label" for="exampleInputFile">ファイルを選択してください</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button type="button" name="inputreset" class="btn btn-outline-secondary reset">取消</button>
+                                        </div>
+                                    </div>
+                                    <?php if (!empty($error_message["inputfile"])) : ?>
+                                            <small class="add-error"><?= $error_message["inputfile"]; ?></small>
+                                        <?php endif; ?>
                                 </div>
 
                             </div>
+
+                        </div>
+
                     </div>
-                    <!-- /.container-fluid -->
-                    <div class="card-footer">
-                            <div class="mt-3 text-left">
-                                <button type="submit" name="add_submit" value='add' class="btn btn-primary">確認</button>
-                                <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">キャンセル</button>
-                            </div>
+                </div>
+                <!-- /.container-fluid -->
+                <div class="card-footer">
+                    <div class="mt-3 text-left">
+                        <button type="submit" name="add_submit" value='add' class="btn btn-primary">入力内容を確認</button>
+                        <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">キャンセル</button>
                     </div>
-            </form>
-        </section>
-                <!-- /.content -->
-            </div>
-            <!-- /.content-wrapper -->
+                </div>
+                </form>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
 
         <footer class="main-footer">
             <!-- To the right -->
@@ -297,41 +312,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="../../dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
-            $('.custom-file-input').on('change', handleFileSelect);
+        $('.custom-file-input').on('change', handleFileSelect);
 
-            function handleFileSelect(evt) {
-                $('#preview').remove(); // 繰り返し実行時の処理
-                $(this).parents('.input-group').after('<div id="preview"></div>');
+        function handleFileSelect(evt) {
+            $('#preview').remove(); // 繰り返し実行時の処理
+            $(this).parents('.input-group').after('<div id="preview"></div>');
 
-                var files = evt.target.files;
+            var files = evt.target.files;
 
-                for (var i = 0, f; f = files[i]; i++) {
+            for (var i = 0, f; f = files[i]; i++) {
 
-                    var reader = new FileReader();
+                var reader = new FileReader();
 
-                    reader.onload = (function(theFile) {
-                        return function(e) {
-                            if (theFile.type.match('image.*')) {
-                                var $html = ['<div class="d-inline-block mr-1 mt-1"><img class="img-thumbnail" src="', e.target.result, '" title="', escape(theFile.name), '" style="height:100px;" /><div class="small text-muted text-center">', escape(theFile.name), '</div></div>'].join(''); // 画像では画像のプレビューとファイル名の表示
-                            } else {
-                                var $html = ['<div class="d-inline-block mr-1"><span class="small">', escape(theFile.name), '</span></div>'].join(''); //画像以外はファイル名のみの表示
-                            }
-                            $('#preview').append($html);
-                        };
-                    })(f);
+                reader.onload = (function(theFile) {
+                    return function(e) {
+                        if (theFile.type.match('image.*')) {
+                            var $html = ['<div class="d-inline-block mr-1 mt-1"><img class="img-thumbnail" src="', e.target.result, '" title="', escape(theFile.name), '" style="height:100px;" /><div class="small text-muted text-center">', escape(theFile.name), '</div></div>'].join(''); // 画像では画像のプレビューとファイル名の表示
+                        } else {
+                            var $html = ['<div class="d-inline-block mr-1"><span class="small">', escape(theFile.name), '</span></div>'].join(''); //画像以外はファイル名のみの表示
+                        }
+                        $('#preview').append($html);
+                    };
+                })(f);
 
-                    reader.readAsDataURL(f);
-                }
-                $(this).next('.custom-file-label').html(+files.length + '個のファイルを選択しました');
+                reader.readAsDataURL(f);
             }
+            $(this).next('.custom-file-label').html(+files.length + '個のファイルを選択しました');
+        }
 
-            //ファイルの取消
-            $('.reset').click(function() {
-                $(this).parent().prev().children('.custom-file-label').html('ファイル選択...');
-                $('#preview').remove();
-                $('.custom-file-input').val('');
-            })
-        </script>
+        //ファイルの取消
+        $('.reset').click(function() {
+            $(this).parent().prev().children('.custom-file-label').html('ファイル選択...');
+            $('#preview').remove();
+            $('.custom-file-input').val('');
+        })
+    </script>
 
 </body>
 
