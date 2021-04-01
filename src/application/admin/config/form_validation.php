@@ -70,13 +70,13 @@ $config = array(
                 'required' => '*%sの入力は必須です。',
             )
         ),
-        array(
-            'field' => 'inputfile',
-            'label' => 'ファイル',
-            'rules' => 'required',
-            'errors' => array(
-                'required' => '*%sの選択は必須です。'
-            ),
-        ),
+        // array(
+        //     'field' => 'inputfile',
+        //     'label' => 'ファイル',
+        //     'rules' => 'required',
+        //     'errors' => array(
+        //         'required' => '*%sの選択は必須です。'
+        //     ),
+        // ),
     )
 );

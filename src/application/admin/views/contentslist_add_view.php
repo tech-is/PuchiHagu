@@ -41,7 +41,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         .custom-file-label {
             white-space: nowrap;
         }
-        .form-group{
+
+        .form-group {
             margin-bottom: 2px;
             margin-top: 10px;
         }
@@ -187,8 +188,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Main content -->
             <section class="content">
-                <?php var_dump($_POST) ?>
-                <?= form_open('contentslist/add'); ?>
+                <?= form_open_multipart('contentslist/add'); ?>
                 <div class="container-fluid">
                     <!-- SELECT2 EXAMPLE -->
                     <div class="card card-default">
@@ -206,17 +206,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>分類</label><span class=" badge badge-danger ">必須</span>
                                     <select name="category" class="form-control select2bs4" style="width: 100%;">
-                                        <option selected="selected"></option>
-                                        <option value="1">ひらがな</option>
-                                        <option value="2">すうじ</option>
-                                        <option value="3">うんぴつ</option>
-                                        <option value="4">てんつなぎ</option>
-                                        <option value="5">プログラミング</option>
+                                        <option disabled selected value="">選択してください</option>
+                                        <?php foreach ($categoryidname as $value) : ?>
+                                            <option value="<?= $value["categories_id"]; ?>"><?= $value["categories_category"]; ?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <?php if (!empty($error_message["category"])) : ?>
@@ -225,7 +222,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="form-group">
                                     <label>タイトル</label><span class=" badge badge-danger ">必須</span>
                                     <div class="col-xs-2">
-                                        <input type="text" id="contentstitle" name="contentstitle" class="form-control " placeholder="タイトルを入力してください " value="<?php if(!empty($post_data["contentstitle"])){echo $post_data["contentstitle"];} ?>">
+                                        <input type="text" id="contentstitle" name="contentstitle" class="form-control " placeholder="タイトルを入力してください " value="<?php if (!empty($post_data["contentstitle"])) {
+                                                                                                                                                                    echo $post_data["contentstitle"];
+                                                                                                                                                                } ?>">
                                     </div>
                                 </div>
                                 <?php if (!empty($error_message["contentstitle"])) : ?>
@@ -234,7 +233,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="form-group">
                                     <label>説明文</label>
                                     <div class="col-xs-2">
-                                        <input type="text" id="contentsmemo" name="contentsmemo" class="form-control " placeholder="説明文を入力してください">
+                                        <input type="text" id="contentsmemo" name="contentsmemo" class="form-control " placeholder="説明文を入力してください" value="<?php if (!empty($post_data["contentsmemo"])) {
+                                                                                                                                                                echo $post_data["contentsmemo"];
+                                                                                                                                                            } ?>">
                                     </div>
                                 </div>
 
@@ -250,8 +251,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                     </div>
                                     <?php if (!empty($error_message["inputfile"])) : ?>
-                                            <small class="add-error"><?= $error_message["inputfile"]; ?></small>
-                                        <?php endif; ?>
+                                        <small class="add-error"><?= $error_message["inputfile"]; ?></small>
+                                    <?php endif; ?>
                                 </div>
 
                             </div>
@@ -263,7 +264,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- /.container-fluid -->
                 <div class="card-footer">
                     <div class="mt-3 text-left">
-                        <button type="submit" name="add_submit" value='add' class="btn btn-primary">入力内容を確認</button>
+                        <button type="submit" name="confirmation_submit" value='add' class="btn btn-primary">入力内容を確認</button>
                         <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">キャンセル</button>
                     </div>
                 </div>

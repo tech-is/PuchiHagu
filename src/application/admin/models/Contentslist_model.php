@@ -3,27 +3,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Contentslist_model extends CI_Model{
 
-        public function add($data){
-            $category = $data['category'];
-            $contentstitle = $data['contentstitle'];
-            $contentsmemo = $data['contentsmemo'];
-            $inputfile = $data['inputfile'];
-            //失敗値はFALSE,成功したら
-            $result = $this->db->insert('contents',array(
-                'categories_id'=>$category,
-                'contents_title'=> $contentstitle,
-                'contents_description' =>$contentsmemo,
-                'contents_content' =>$inputfile,
-            ));
-            var_dump($result);
-            exit;
-            if($result){
-                return true;
-            } else{
-                return false;
-            }
 
+    public function pulldown(){
+        $this->db->select("categories_id,categories_category");
+        //returnの後の実行結果が返り値になる
+        return $this->db->get("categories")
+                ->result_array();
+
+    }
+
+    
+    public function pulldown_C($cid){
+        $query = $this->db->get_where('categories', array('categories_id' =>$cid));
+        $tmp = $query->row(0, 'array');
+        return $tmp['categories_category'];
+        
+    }
+
+    public function upload($data){
+
+        $category = $data['category'];
+        $contentstitle =$data['contentstitle'];
+        $contents_description =$data['contentsmemo'];
+        $contents_content=$data['inputfile'];
+        
+        $result = $this->db->insert('contents',array(
+            'contents_title' =>$contentstitle,
+            'contents_description' =>$contents_description,
+            'contents_content' =>$contents_content,
+
+        ));
+        //失敗値はFALSE,成功したらTRUE
+        
+        if($result){
+            return true;
+        } else{
+            return false;
         }
 
+    }
 }
 ?>
