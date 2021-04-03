@@ -265,7 +265,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="card-footer">
                     <div class="mt-3 text-left">
                         <button type="submit" name="confirmation_submit" value='add' class="btn btn-primary">入力内容を確認</button>
-                        <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">キャンセル</button>
+                        <a class="btn btn-secondary" href="<?= base_url('admin.php/contentslist/index'); ?>" role="button">キャンセル</a>
                     </div>
                 </div>
                 </form>
@@ -330,7 +330,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         if (theFile.type.match('image.*')) {
                             var $html = ['<div class="d-inline-block mr-1 mt-1"><img class="img-thumbnail" src="', e.target.result, '" title="', escape(theFile.name), '" style="height:100px;" /><div class="small text-muted text-center">', escape(theFile.name), '</div></div>'].join(''); // 画像では画像のプレビューとファイル名の表示
                         } else {
-                            var $html = ['<div class="d-inline-block mr-1"><span class="small">', escape(theFile.name), '</span></div>'].join(''); //画像以外はファイル名のみの表示
+                            var $html = ['<div class="d-inline-block mr-1"><span class="small">', theFile.name, '</span></div>'].join(''); //画像以外はファイル名のみの表示
                         }
                         $('#preview').append($html);
                     };

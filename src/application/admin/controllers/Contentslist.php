@@ -12,6 +12,7 @@ class Contentslist extends CI_Controller
         }
         $this->load->model('contentslist_model');
         date_default_timezone_set('Asia/Tokyo');
+
     }
     public function index()
     {
@@ -58,9 +59,14 @@ class Contentslist extends CI_Controller
         } else if ($this->input->post('cancel_submit')) {
             //inputされたデータを配列に入れてviewに渡して再入力の手間をなくす
             $data["post_data"] = $this->input->post();
-            $this->load->view('contentslist_add_view', $data);
+            $data["categoryidname"] = $this->contentslist_model->pulldown();
+            return $this->load->view('contentslist_add_view', $data);
         } else {
-            // 
+            $data["error_message"] = '登録処理エラー';
+            $data["post_data"] = $this->input->post();
+            $data["categoryidname"] = $this->contentslist_model->pulldown();
+            $this->load->view('contentslist_add_view', $data);
+
         }
     }
 
@@ -72,11 +78,11 @@ class Contentslist extends CI_Controller
             $result = null;
             $data= $this->input->post();
             $result = $this->contentslist_model->upload($data);
-            if ($result) {
+            if (!empty($result)){
                 //テストフォルダに仮保存したファイルを正式なフォルダへ移動させる
-                $inputfile = time().$_POST["inputfile"];
-                $inputfiledir = $_POST["inputfiledir"];
-                $category = $this->input->post("category");
+                $inputfile = $result;
+                $inputfiledir = $data["inputfiledir"];
+                $category = $data["category"];
                 $categoryArray = $this->config->item("category");
                 $path = "./upload/" . $categoryArray[$category] . "/" . $inputfile;
                 if (rename($inputfiledir, $path)) {

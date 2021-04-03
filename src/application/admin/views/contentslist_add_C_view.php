@@ -183,7 +183,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Main content -->
             <section class="content">
-                <?= form_open_multipart('contentslist/upload'); ?>
+                <?= form_open_multipart('contentslist/confirmation'); ?>
                 <div class="container-fluid">
                     <!-- SELECT2 EXAMPLE -->
                     <div class="card card-default">
@@ -192,7 +192,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <small class="register-error"><?php echo $upload_error_message; ?></small>
                             <?php endif; ?>
                             
-                            <h3 class="card-title">下記内容で間違いがなければ登録ボタンをクリックしてください。</h3>
+                            <h3 class="card-title">下記内容で問題なければ登録ボタンをクリックしてください。</h3>
                            
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">

@@ -188,7 +188,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- SELECT2 EXAMPLE -->
                             <div class="card card-default">
                                 <div class="card-header">
-                                    <h3 class="card-title"><?php echo $error_message; ?></h3>
+                                    <h3 class="card-title"><?php echo $upload_error_message; ?></h3>
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                             <i class="fas fa-minus"></i>
@@ -205,7 +205,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="card-footer">
                             <div class="mt-3 text-left">
                                 <button type="submit" name="add_submit" value='add' class="btn btn-primary">続けて登録する</button>
-                                <button type="submit" name="cancel" class="btn btn-secondary" value="cancel">コンテンツ一覧ページへ戻る</button>
+                                <a class="btn btn-secondary" href="<?= base_url('admin.php/contentslist/index'); ?>" role="button">コンテンツ一覧ページへ戻る</a>
                             </div>
                     </div>
             </form>

@@ -1,11 +1,11 @@
 <?php
 
 $config["category"]= [
-"ひらがな"=>"hiragana",
-"すうじ"=>"suuji",
-"うんぴつ"=>"unpitsu",
-"てんつなぎ"=>"tentsunagi",
-"プログラミング"=>"programing",
+"1"=>"hiragana",
+"2"=>"suuji",
+"3"=>"unpitsu",
+"4"=>"tentsunagi",
+"5"=>"programing",
 ];
 
 ?>

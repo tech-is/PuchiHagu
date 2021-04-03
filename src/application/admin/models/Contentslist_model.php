@@ -12,7 +12,7 @@ class Contentslist_model extends CI_Model{
 
     }
 
-    
+    //確認用のプルダウンの表示
     public function pulldown_C($cid){
         $query = $this->db->get_where('categories', array('categories_id' =>$cid));
         $tmp = $query->row(0, 'array');
@@ -21,13 +21,14 @@ class Contentslist_model extends CI_Model{
     }
 
     public function upload($data){
-
+        $time = time();
         $category = $data['category'];
-        $contentstitle =$data['contentstitle'];
+        $contentstitle =$time."_".$data['contentstitle'];
         $contents_description =$data['contentsmemo'];
-        $contents_content=$data['inputfile'];
-        
+        $contents_content=$time."_".$data['inputfile'];
+
         $result = $this->db->insert('contents',array(
+            'categories_id' =>$category,
             'contents_title' =>$contentstitle,
             'contents_description' =>$contents_description,
             'contents_content' =>$contents_content,
@@ -36,7 +37,7 @@ class Contentslist_model extends CI_Model{
         //失敗値はFALSE,成功したらTRUE
         
         if($result){
-            return true;
+            return $contents_content;
         } else{
             return false;
         }
