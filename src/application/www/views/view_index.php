@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>幼児無料プリントサイト ぷちはぐ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="無料で利用できる幼児(3歳～6歳)向けの教育、プリントサービスです">
+    <meta name="keywords" content="幼児教育,知育,無料プリント,子供プリント,ひらがな,印刷">
+    <link rel="stylesheet" href="topdist/css/style.css">
+    <link rel="stylesheet" href="topdist/css/slide.css">
+    <script src="topdist/js/fixmenu_pagetop.js"></script>
+    <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="home">
+
+    <div id="container">
+
+        <header>
+            <h1 id="logo">
+                <a href="index.html"><img src="topdist/images/logo1.png" alt="SAMPLE COMPANY"></a>
+            </h1>
+            <!--スライドショー-->
+            <aside id="mainimg">
+                <div class="slide1">slide1</div>
+                <div class="slide2">slide2</div>
+                <div class="slide3">slide3</div>
+                <div class="slide0"><img src="topdist/images/waku.png" alt=""></div>
+            </aside>
+        </header>
+
+        <nav id="menubar">
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="signup.html">会員登録・ログイン</a></li>
+                <li><a href="print.html">プリントする</a></li>
+                <li><a href="oshirase.html">お知らせ・コラム</a></li>
+                <li><a href="aboutsite.html">このサイトについて・利用規約</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+
+        <div id="contents">
+
+            <a href="hiragana.html">ひらがなページ</a>
+
+            <section id="new" class="box1">
+
+                <h2><span>What's New</span></h2>
+                <dl>
+                    <dt>2021/04/01</dt>
+                    <dd>サイトがオープンしました！<span class="newicon">NEW</span></dd>
+                    <dt>20XX/00/00</dt>
+                    <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+                    <dt>20XX/00/00</dt>
+                    <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+                    <dt>20XX/00/00</dt>
+                    <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+                    <dt>20XX/00/00</dt>
+                    <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+                    <dt>20XX/00/00</dt>
+                    <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+                    <dt>20XX/00/00</dt>
+                    <dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
+                </dl>
+
+            </section>
+            <!--/#new-->
+
+            <section class="box1">
+
+                <h2><span>「ぷちはぐ」ってなあに？</span></h2>
+
+                <h3>未就学児向けのプリント学習サービスです</h3>
+
+                <p>このサイトは3歳(年少)から5歳(年長)までのお子さんを対象とした幼児教育プリントサービスです。<br> ３人のパパママで運営しています。プリントを利用される場合は
+                    <a href="about.html">利用規約</a>のに同意したものとみなします。</p>
+
+                <!--/#contents-->
+
+                <footer>
+                    <small>Copyright&copy; <a href="index.html">幼児プリントサイト　ぷちはぐ</a> All Rights Reserved.</small>
+                    <span class="pr">《<a href="https://template-party.com/" target="_blank">Web Design:Template-Party</a>》</span>
+                </footer>
+
+        </div>
+        <!--/#container-->
+
+        <!--ページの上部に戻る「↑」ボタン-->
+        <p class="nav-fix-pos-pagetop">
+            <a href="#"><img src="images/pagetop.png" alt="PAGE TOP"></a>
+        </p>
+
+</body>
+
+</html>
