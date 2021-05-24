@@ -10,8 +10,8 @@
   <meta name="keywords" content="幼児教育,知育,無料プリント,子供プリント,ひらがな,印刷">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="http://puchihagu.com/topdist/style.css">
-  <link rel="stylesheet" href="http://puchihagu.com/topdist/slide.css">
+  <link rel="stylesheet" href="http://puchihagu.com/topdist/css/style.css">
+  <link rel="stylesheet" href="http://puchihagu.com/topdist/css/slide.css">
   <script src="http://puchihagu.com/topdist/js/fixmenu_pagetop.js"></script>
   <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -101,7 +101,7 @@
     <!--/#contents-->
 
     <footer>
-      <small>Copyright&copy; <a href="index.html">幼児無料プリントサイト　ぷちはぐ</a> All Rights Reserved.</small>
+      <small>Copyright&copy; <a href="http://puchihagu.com/index.php/Top/index">幼児無料プリントサイト　ぷちはぐ</a> All Rights Reserved.</small>
       <span class="pr">《<a href="https://template-party.com/" target="_blank">Web Design:Template-Party</a>》</span>
     </footer>
 

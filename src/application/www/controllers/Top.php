@@ -7,4 +7,9 @@ class Top extends CI_Controller {
 	{
 		$this->load->view('view_index');
 	}
+
+	public function print()
+	{
+		$this->load->view('print_view');
+	}
 }
