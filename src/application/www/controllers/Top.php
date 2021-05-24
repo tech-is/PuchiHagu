@@ -12,4 +12,24 @@ class Top extends CI_Controller {
 	{
 		$this->load->view('print_view');
 	}
+
+	public function print_hiragana()
+	{
+		$this->load->view('hiragana');
+	}
+
+	public function print_suzi()
+	{
+		$this->load->view('suzi');
+	}
+
+	public function print_unpitu()
+	{
+		$this->load->view('unpitu');
+	}
+
+	public function print_tentunagi()
+	{
+		$this->load->view('tentunagi');
+	}
 }

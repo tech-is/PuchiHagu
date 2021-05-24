@@ -51,13 +51,13 @@
                     <img src="http://puchihagu.com/topdist/images/hiragana.png" alt="ひらがなプリント" width="300" height="">
                   </td>
                   <td>
-                    <a href="hiragana.html" class="btn btn-malformation1">「ひらがな」を印刷</a>
+                    <a href="http://puchihagu.com/index.php/Top/print_hiragana" class="btn btn-malformation1">「ひらがな」を印刷</a>
                   </td>
                   <td>
                     <img src="http://puchihagu.com/topdist/images/suzi.png" alt="すうじプリント" width="300" height=""></p>
                   </td>
                   <td>
-                    <a href="suzi.html" class="btn btn-malformation2">「すうじ」を印刷</a>
+                    <a href="http://puchihagu.com/index.php/Top/print_suzi" class="btn btn-malformation2">「すうじ」を印刷</a>
                   </td>
                 </tr>
               </tbody>
@@ -70,13 +70,13 @@
                     <img src="http://puchihagu.com/topdist/images/unpitsu.png" alt="ひらがなプリント" width="300" height="">
                   </td>
                   <td>
-                    <a href="unpitu.html" class="btn btn-malformation3">「運筆」を印刷</a>
+                    <a href="http://puchihagu.com/index.php/Top/print_unpitu" class="btn btn-malformation3">「運筆」を印刷</a>
                   </td>
                   <td>
                     <img src="http://puchihagu.com/topdist/images/tentunagi.png" alt="すうじプリント" width="300" height=""></p>
                   </td>
                   <td>
-                    <a href="tentunagi.html" class="btn btn-malformation4">「点つなぎ」を印刷</a>
+                    <a href="http://puchihagu.com/index.php/Top/print_tentunagi" class="btn btn-malformation4">「点つなぎ」を印刷</a>
                   </td>
                 </tr>
               </tbody>
