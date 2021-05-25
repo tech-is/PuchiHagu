@@ -35,7 +35,7 @@
         <li><a href="http://puchihagu.com/index.php/Top/print">プリントする</a></li>
         <li><a href="oshirase.html">お知らせ・コラム</a></li>
         <li><a href="aboutsite.html">このサイトについて・利用規約</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="http://puchihagu.com/index.php/Top/contact">お問い合わせ</a></li>
       </ul>
     </nav>
 
