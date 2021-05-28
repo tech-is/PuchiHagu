@@ -37,6 +37,12 @@ class Top extends CI_Controller {
 		$this->load->view('tentunagi');
 	}
 
+	public function print_programming()
+	{
+		$this->load->view('header_view');
+		$this->load->view('programming');
+	}
+
 	public function contact()
 	{
 		$this->load->view('header_view');
