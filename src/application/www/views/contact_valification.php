@@ -16,6 +16,20 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<script type = "text/javascript">
+
+function disp(){
+  if(window.confirm('メッセージを送信する')){
+    location.href = "http://puchihagu.com/index.php/Top/send";
+  }
+  else{
+    window.alert('キャンセルされました');
+  }
+}
+</script>
+
+</head>
+
 <body>
 
   <div id="container">
@@ -34,62 +48,33 @@
         <li><a href="aboutsite.html">このサイトについて・利用規約</a></li>
         <li><a href="http://puchihagu.com/index.php/Top/contact">お問い合わせ</a></li>
       </ul>
-    </nav>
-    <div id="contents">
+    </nav>  <div id="contents">
 
     <section>
     
     <h2><span>お問い合わせ</span></h2>
-    <?php if (! empty($_SESSION['success_message'])){
-      echo $_SESSION['success_message'];} ?>
-    </div>
-    <?php if (! empty($_SESSION['error_message'])){
-      echo $_SESSION['error_message'];} ?>
-    <?php echo form_open('Top/valification');?>
-    <?php unset($_SESSION['success_message']);
-          unset($_SESSION['error_message']); ?>
+    <?php echo form_open('Top/send');?>
     <table class="ta1">
     <tr>
       <th>お名前※</th>
-      <td><?php $data = array(
-          'name'            =>  'contact_name',
-          'id'              =>  'contact_name',
-          'size'            =>  '30',
-          'class'           =>  'ws'
-          ); ?>
-        <?php echo form_input($data,set_value('contact_name'));?>
-      </td>
+      <td><?php echo $_SESSION['contact_name']; ?></td>
     </tr>
     <tr>
       <th>メールアドレス※</th>
-      <td><?php $data = array(
-          'name'            =>  'contact_mail',
-          'id'              =>  'contact_mail',
-          'size'            =>  '30',
-          'class'           =>  'ws'
-          ); ?>
-          <?php echo form_input($data,set_value('contact_mail'));?>
-      </td>
-    </tr>
+      <td><?php echo $_SESSION['contact_mail']; ?></td>
     <tr>
       <th>お問い合わせ詳細※</th>
-      <td><?php $data = array(
-          'name'            =>  'contact_contents',
-          'id'              =>  'contact_contents',
-          'cols'            =>  '30',
-          'rows'            =>  '10',
-          'class'           =>  'wl'
-          ); ?>
-          <?php echo form_textarea($data,set_value('contact_contents'));?>
-      </td>
+      <td><?php echo $_SESSION['contact_contents']; ?></td>
     </tr>
     </table>
     
     <p class="c">
-    <input type="submit" value="内容を確認する" class="btn" name="btn_submit">
+    <input type="submit" value="上記の内容で送信する" class="btn" name="btn_submit">
+    </p>
+    <p style="text-align:center">
+    <a href="http://puchihagu.com/index.php/Top/contact">キャンセル</a>
     </p>
     </section>
-    
     </div>
 <!--/#contents-->
 
