@@ -42,9 +42,10 @@
     <h2><span>お問い合わせ</span></h2>
     <?php if (! empty($_SESSION['success_message'])){
       echo $_SESSION['success_message'];} ?>
-    </div>
-    <?php if (! empty($_SESSION['error_message'])){
-      echo $_SESSION['error_message'];} ?>
+    <?php if (! empty($_SESSION['error_message'])){ ?>
+      <!-- <div style = "display:inline-block; background:fcfcff; padding:15px;border:1px solid #3b5998; border-radius:10px; word-break:breal-all;"> -->
+      <?php echo $_SESSION['error_message'];} ?> 
+      <!-- </div> -->
     <?php echo form_open('Top/valification');?>
     <?php unset($_SESSION['success_message']);
           unset($_SESSION['error_message']); ?>
