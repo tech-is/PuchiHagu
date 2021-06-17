@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>幼児無料プリントサイト ぷちはぐ</title>
+    <title>会員情報の変更｜幼児無料プリントサイト ぷちはぐ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="無料で利用できる幼児(3歳～6歳)向けの教育、プリントサービスです">
     <meta name="keywords" content="幼児教育,知育,無料プリント,子供プリント,ひらがな,印刷">
